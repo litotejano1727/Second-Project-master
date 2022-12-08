@@ -50,6 +50,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
             <div className=' d_flex'>
               <h4>Total Price :</h4>
               <h3>₱{totalPrice}.00</h3>
+              <button className="btn btn-primary">Checkout</button>
             </div>
           </div>
         </div>
