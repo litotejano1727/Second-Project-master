@@ -1,6 +1,6 @@
 import React from 'react'
 import './sidebar.css'
-import { Home, Timeline, TrendingUp, PermIdentity, Storefront, AttachMoney, BarChart} from '@mui/icons-material'
+import { Home, Timeline, TrendingUp, PermIdentity, Storefront, AttachMoney, BarChart, MailOutline, DynamicFeed, ChatBubbleOutline, WorkOutline, ReportProblem} from '@mui/icons-material'
 
 function Sidebar() {
   return (
@@ -48,16 +48,16 @@ function Sidebar() {
                 <h3 className="sidebarTitle">Staff</h3>
                 <ul>
                     <li className="sidebarListItem">
-                        <Home className='sidebarIcon'/> 
-                        Home
+                        <MailOutline className='sidebarIcon'/> 
+                        Mail
                     </li>
                     <li className="sidebarListItem">
-                        <Timeline className='sidebarIcon'/> 
-                        Analiytics
+                        <DynamicFeed className='sidebarIcon'/> 
+                        Feedback
                     </li>
                     <li className="sidebarListItem">
-                        <TrendingUp/> 
-                        Sales
+                        <ChatBubbleOutline className='sidebarListItem'/> 
+                        Messages
                     </li>
                 </ul>
             </div>
@@ -65,16 +65,16 @@ function Sidebar() {
                 <h3 className="sidebarTitle">Notifications</h3>
                 <ul>
                     <li className="sidebarListItem">
-                        <Home className='sidebarIcon'/> 
-                        Home
+                        <WorkOutline className='sidebarIcon'/> 
+                        Manage
                     </li>
                     <li className="sidebarListItem">
                         <Timeline className='sidebarIcon'/> 
                         Analiytics
                     </li>
                     <li className="sidebarListItem">
-                        <TrendingUp/> 
-                        Sales
+                        <ReportProblem className/> 
+                        Reports
                     </li>
                 </ul>
             </div>
