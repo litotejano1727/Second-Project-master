@@ -1,7 +1,7 @@
 
 import "./auth.css"
 
- function login(props) {
+ const login = (props) => {
   return (
     <div className="Auth-form-container">
       <form className="Auth-form">
