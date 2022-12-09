@@ -36,5 +36,7 @@ import "./auth.css"
     </div>
     
   )
+ 
 };
+login();
 export default login;

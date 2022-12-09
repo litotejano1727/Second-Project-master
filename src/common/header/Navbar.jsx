@@ -25,9 +25,6 @@ const Navbar = () => {
                 <Link to='/pages'>pages</Link>
               </li>
               <li>
-                <Link to='/user'>user account</Link>
-              </li>
-              <li>
                 <Link to='/vendor'>vendor account</Link>
               </li>
               <li>
@@ -36,7 +33,7 @@ const Navbar = () => {
               <li>
                 <Link to='/contact'>contact</Link>
               </li>
-              <li onClick={login()}>
+              <li>
                <Link to='/auth' >Login</Link>
                </li>
             </ul>

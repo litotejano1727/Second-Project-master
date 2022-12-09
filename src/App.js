@@ -61,6 +61,9 @@ function App() {
                             decreaseQty={decreaseQty}
                         />
                     </Route>
+                    <Route>
+                        <Route path="/auth" element={<Auth />} />
+                    </Route>
                 </Switch>
                 <Footer />
             </Router>
