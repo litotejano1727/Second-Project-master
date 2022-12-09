@@ -11,11 +11,11 @@ const Footer = () => {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor libero id et, in gravida. Sit diam duis mauris nulla cursus. Erat et lectus vel ut sollicitudin elit at amet.</p>
             <div className='icon d_flex'>
               <div className='img d_flex'>
-                <i class='fa-brands fa-google-play'></i>
+                <i className='fa-brands fa-google-play'></i>
                 <span>Google Play</span>
               </div>
               <div className='img d_flex'>
-                <i class='fa-brands fa-app-store-ios'></i>
+                <i className='fa-brands fa-app-store-ios'></i>
                 <span>App Store</span>
               </div>
             </div>
@@ -44,9 +44,9 @@ const Footer = () => {
           <div className='box'>
             <h2>Contact Us</h2>
             <ul>
-              <li>70 Washington Square South, New York, NY 10012, United States </li>
-              <li>Email: uilib.help@gmail.com</li>
-              <li>Phone: +1 1123 456 780</li>
+              <li>18th Floor, W Fifth, 5th Avenue, Taguig, 1630 Metro Manila</li>
+              <li>Email: online-shopping@gmail.com</li>
+              <li>Phone: +639876543210</li>
             </ul>
           </div>
         </div>
