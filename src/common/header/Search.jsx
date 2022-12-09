@@ -13,7 +13,11 @@ const Search = ({ CartItem }) => {
       <section className='search'>
         <div className='container c_flex'>
           <div className='logo width '>
+<<<<<<< HEAD
             <img src={logo} alt='' />
+=======
+          <a href="/"><img src={logo} className='icon-size' alt='' /></a>
+>>>>>>> 214e1ab14c6da62327d36170bf65f8de5952bde9
           </div>
 
           <div className='search-box f_flex'>
@@ -27,7 +31,7 @@ const Search = ({ CartItem }) => {
             <div className='cart'>
               <Link to='/cart'>
                 <i className='fa fa-shopping-bag icon-circle'></i>
-                <span>{CartItem.length === 0 ? "" : CartItem.length}</span>
+                <span>{CartItem.length === 0 ? "0" : CartItem.length}</span>
               </Link>
             </div>
           </div>

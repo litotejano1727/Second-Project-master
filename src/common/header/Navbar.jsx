@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
+import login from "../../components/Auth/Auth"
 
 const Navbar = () => {
   const [MobileMenu, setMobileMenu] = useState(false)
@@ -16,7 +17,7 @@ const Navbar = () => {
 
           <div className='navlink'>
             <ul className={MobileMenu ? "nav-links-MobileMenu" : "link f_flex capitalize"} onClick={() => setMobileMenu(false)}>
-              {/*<ul className='link f_flex uppercase {MobileMenu ? "nav-links-MobileMenu" : "nav-links"} onClick={() => setMobileMenu(false)}'>*/}
+              
               <li>
                 <Link to='/'>home</Link>
               </li>
@@ -35,6 +36,9 @@ const Navbar = () => {
               <li>
                 <Link to='/contact'>contact</Link>
               </li>
+              <li>
+               <Link to='/auth' onClick={login()}>Login</Link>
+               </li>
             </ul>
 
             <button className='toggle' onClick={() => setMobileMenu(!MobileMenu)}>
