@@ -7,7 +7,7 @@ import Data from "./components/Data";
 import Cart from "./common/Cart/Cart";
 import Footer from "./common/footer/Footer";
 import Sdata from "./components/shops/Sdata";
-import Auth from "./components/Auth/Auth";
+import Auth from "./Auth";
 
 function App() {
     const { productItems } = Data;
@@ -61,10 +61,8 @@ function App() {
                             decreaseQty={decreaseQty}
                         />
                     </Route>
-                    <Route>
-                        <Route path="/auth" element={<Auth />} />
-                    </Route>
                 </Switch>
+
                 <Footer />
             </Router>
         </>

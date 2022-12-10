@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
-import login from "../../components/Auth/Auth"
 
 const Navbar = () => {
   const [MobileMenu, setMobileMenu] = useState(false)
