@@ -16,6 +16,39 @@
 .row {
     height: 30px;
 }
+
+.RText{
+    display: flex;
+    gap: 20px;
+}
+.contactInfo{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.contact > i{
+    justify-content: center;
+    align-content: center;
+    margin-right: 5px;
+}
+.pointer{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.pointer:hover{
+    color: rgb(233, 69, 96);
+}
+@media screen and (max-width: 800px) {
+    .containerhead{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .head{
+        padding: 10px 0px;
+        
+    }
+  }
 /*------head-----------*/
 /*------search-----------*/
 .search {

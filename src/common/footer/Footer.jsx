@@ -8,7 +8,7 @@ const Footer = () => {
         <div className='container grid2'>
           <div className='box'>
             <h1>Online Shop</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor libero id et, in gravida. Sit diam duis mauris nulla cursus. Erat et lectus vel ut sollicitudin elit at amet.</p>
+            <p>"Our computer is a powerful and reliable device that is perfect for all your computing needs. With a fast processor, plenty of storage, and a sharp display, this computer will help you stay productive and entertained wherever you are. Whether you're browsing the web, working on a project, or playing your favorite games, this computer has the speed and performance you need. Plus, with a sleek design and slim profile, it will look great on any desk or in any backpack. Shop now and get the best computer for your needs."</p>
             <div className='icon d_flex'>
               <div className='img d_flex'>
                 <i class='fa-brands fa-google-play'></i>
