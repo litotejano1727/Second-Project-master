@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Serif+Pro:wght@200;300;400;700&display=swap");
-@import url(./topbar.css);
+@import url(./topbar/topbar.css);
+@import url(./sidebar/sidebar.css);
+@import url(./pages/home/home.css);
 :root {
     --primary-color: #21a558;
     --second-color: #794afa;
@@ -12,7 +14,9 @@
     --dark-color: #0a021c;
     --warning-color: red;
   
+    --font-large: 30px;
     --font-small: 14px;
+    --font16: 16px;
     --font-smaller: 12px;
   
     --percent100: 100%;
@@ -31,6 +35,11 @@
   }
 *{
     font-family: "Source Serif Pro", serif;
-    color: var(--dark-color);
+}
+.containerAdmin{
+  display: flex;
+}
 
+.link{
+  color: inherit;
 }

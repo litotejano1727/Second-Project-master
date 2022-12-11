@@ -9,13 +9,16 @@ function App2() {
     return (
         <Router>
             <Switch>
-                <Route path="/Admin" exact>
-                    <Admin />
-                </Route>
                 <Route path="/" exact>
                     <App />
                 </Route>
                 <Route path="/Login">{<Auth />}</Route>
+                <Route path="/Admin/*" exact>
+                    <Admin />
+                </Route>
+                <Route path='/Admin' exact>
+                    <Admin />
+                </Route>
             </Switch>
         </Router>
     );
