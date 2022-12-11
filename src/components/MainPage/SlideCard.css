@@ -1,0 +1,5 @@
+.slider-product {
+    height: 50px !important;
+    width: 50px !important;
+    object-fit: scale-down !important;
+}

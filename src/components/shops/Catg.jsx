@@ -11,19 +11,19 @@ const Catg = () => {
       cateName: "GIGABYTE",
     },
     {
-      cateImg: "./images/category/cat-1.png",
+      cateImg: "./images/category/cat-3.png",
       cateName: "ZOTAC",
     },
     {
-      cateImg: "./images/category/cat-2.png",
+      cateImg: "./images/category/cat-4.png",
       cateName: "RAKK",
     },
     {
-      cateImg: "./images/category/cat-1.png",
+      cateImg: "./images/category/cat-5.png",
       cateName: "SAMSUNG",
     },
     {
-      cateImg: "./images/category/cat-2.png",
+      cateImg: "./images/category/cat-6.png",
       cateName: "ACER",
     },
   ]
