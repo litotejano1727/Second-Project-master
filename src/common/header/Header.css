@@ -3,14 +3,18 @@
     background-color: #0f3460;
     padding: 10px 0;
     color: #fff !important;
+    height: 100px;
 }
 .head i {
     margin-right: 10px;
 }
 .head label {
-    margin-right: 30px;
+    margin-right: px;
     font-size: 13px;
     color: #fff;
+}
+.row {
+    height: 30px;
 }
 /*------head-----------*/
 /*------search-----------*/

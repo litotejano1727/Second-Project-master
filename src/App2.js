@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Admin from "./Admin/Admin";
 import App from "./App";
 import Auth from "./Auth";
+import "./App.css";
 
 function App2() {
     return (
@@ -14,7 +15,7 @@ function App2() {
                 <Route path="/" exact>
                     <App />
                 </Route>
-                <Route path="/auth/*">{<Auth />}</Route>
+                <Route path="/Login">{<Auth />}</Route>
             </Switch>
         </Router>
     );

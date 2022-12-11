@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./Auth.css";
 
 export default function (props) {
     let [authMode, setAuthMode] = useState("signin");
