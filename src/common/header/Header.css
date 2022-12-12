@@ -3,7 +3,7 @@
     background-color: #0f3460;
     padding: 10px 0;
     color: #fff !important;
-    height: 100px;
+    height: 45px;
 }
 .head i {
     margin-right: 10px;
@@ -17,38 +17,37 @@
     height: 30px;
 }
 
-.RText{
+.RText {
     display: flex;
     gap: 20px;
 }
-.contactInfo{
+.contactInfo {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
-.contact > i{
+.contact > i {
     justify-content: center;
     align-content: center;
     margin-right: 5px;
 }
-.pointer{
+.pointer {
     cursor: pointer;
     display: flex;
     align-items: center;
 }
-.pointer:hover{
+.pointer:hover {
     color: rgb(233, 69, 96);
 }
 @media screen and (max-width: 800px) {
-    .containerhead{
-      display: flex;
-      flex-wrap: wrap;
+    .containerhead {
+        display: flex;
+        flex-wrap: wrap;
     }
-    .head{
+    .head {
         padding: 10px 0px;
-        
     }
-  }
+}
 /*------head-----------*/
 /*------search-----------*/
 .search {

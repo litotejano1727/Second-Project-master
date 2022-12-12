@@ -17,8 +17,9 @@ const NewArrivals = () => {
               <i className='fa-solid fa-caret-right'></i>
             </div>
           </div>
-
+          <div className="margin-top">
           <Cart />
+          </div>
         </div>
       </section>
     </>

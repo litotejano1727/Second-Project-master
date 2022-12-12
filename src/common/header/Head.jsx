@@ -6,7 +6,7 @@ const Head = () => {
       <section className='head'>
         <div className='container d_flex containerhead'>
           <div className='contactInfo'>
-            <div className="contact Numbe pointer">
+            <div className="contact Number pointer">
               <i className='fa fa-phone'></i>
               <label className="pointer"> +639876543210</label>
             </div>
