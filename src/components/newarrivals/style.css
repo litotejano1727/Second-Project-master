@@ -1,5 +1,5 @@
 .heading img {
-    width: 40px;
+    width: 60px;
     height: 40px;
     margin-top: 5px;
 }
@@ -19,4 +19,6 @@
     border: solid 1px rgb(221, 217, 217);
     border-radius: 8px;
     background-color: rgb(234, 236, 236);
+    /* min-height: 78px;
+    min-width: 78px; */
 }

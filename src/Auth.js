@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Auth.css";
 import Head from "./common/header/Head";
+import Footer from "./common/footer/Footer";
 export default function (props) {
     let [authMode, setAuthMode] = useState("signin");
 
@@ -56,6 +57,7 @@ export default function (props) {
                         </div>
                     </form>
                 </div>
+                <Footer />
             </>
         );
     }
@@ -111,6 +113,7 @@ export default function (props) {
                     </div>
                 </form>
             </div>
+            <Footer />
         </>
     );
 }

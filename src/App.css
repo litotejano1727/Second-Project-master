@@ -132,8 +132,7 @@ button {
 }
 .flash-product {
     height: 250px;
-    max-width: 270px;
-    padding-left: 50px;
+    width: 90%;
     object-fit: contain;
 }
 .laptop {
