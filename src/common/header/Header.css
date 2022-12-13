@@ -147,6 +147,7 @@ header ul li a:hover {
     display: none;
 }
 .search.active {
+    padding: 0;
     height: 12vh;
     position: fixed;
     top: 0;
