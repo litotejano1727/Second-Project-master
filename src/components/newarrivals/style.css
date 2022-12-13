@@ -19,6 +19,6 @@
     border: solid 1px rgb(221, 217, 217);
     border-radius: 8px;
     background-color: rgb(234, 236, 236);
-    /* min-height: 78px;
-    min-width: 78px; */
+    display: flex;
+    justify-content: center;
 }
