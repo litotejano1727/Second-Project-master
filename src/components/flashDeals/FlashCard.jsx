@@ -4,24 +4,24 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
 const SampleNextArrow = (props) => {
-  const { onClick } = props
+  const { className, style, onClick } = props
   return (
-    <div className='control-btn' onClick={onClick}>
-      <button className='next'>
-        <i className='fa fa-long-arrow-alt-right'></i>
-      </button>
-    </div>
-  )
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "black", borderRadius: "50%",padding:"1px 6px 0 0"}}
+      onClick={onClick}
+    />
+  );
 }
 const SamplePrevArrow = (props) => {
-  const { onClick } = props
+  const { className, style, onClick } = props;
   return (
-    <div className='control-btn' onClick={onClick}>
-      <button className='prev'>
-        <i className='fa fa-long-arrow-alt-left'></i>
-      </button>
-    </div>
-  )
+    <div
+      className={className}
+      style={{ ...style, background: "black", borderRadius: "50%",padding:"1px 6px 0 0"}}
+      onClick={onClick}
+    />
+  );
 }
 const FlashCard = ({ productItems, addToCart }) => {
   const [count, setCount] = useState(0)
@@ -29,17 +29,46 @@ const FlashCard = ({ productItems, addToCart }) => {
     setCount(count + 1)
   }
   const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-  }
-
-  return (
-    <>
+    dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      initialSlide: 0,
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ],
+      // nextArrow: <SampleNextArrow />,
+      // prevArrow: <SamplePrevArrow />,
+    }
+    
+    return (
+      <>
       <Slider {...settings}>
         {productItems.map((productItems) => {
           return (
