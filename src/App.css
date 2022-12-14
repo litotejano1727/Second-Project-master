@@ -19,6 +19,9 @@ body {
     max-width: 90%;
     margin: auto;
 }
+.overflow {
+    text-overflow: hidden;
+}
 .d_flex {
     display: flex;
     justify-content: space-between;
@@ -81,6 +84,9 @@ button {
     padding: 15px 0;
     border-radius: 5px;
     margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 .category img {
     width: 30px;
