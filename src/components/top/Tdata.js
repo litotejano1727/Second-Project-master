@@ -16,12 +16,12 @@ const Tdata = [
     },
     {
         cover: "./images/top/category-2.png",
-        para: "watch",
+        para: "Laptop",
         desc: "4k orders this week",
     },
     {
         cover: "./images/top/category-3.png",
-        para: "sunglass",
+        para: "RAM",
         desc: "6k orders this week",
     },
 ];
