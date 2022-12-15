@@ -9,11 +9,9 @@
 }
 .widgetLgTable{
     width: 100%;
-    border-spacing: 20px;
+    border-spacing: 10px;
 }
-.widgetLgTh{
-    text-align: left;
-}
+
 .widgetLgUser{
     display: flex;
     justify-content: flex-start;
@@ -25,7 +23,8 @@
     height: 40px;
     border-radius: var(--percent50);
     object-fit: cover;
-    margin-right: 10px;
+    margin: 10px;
+
 }
 .widgetLgDate,.widgetLgAmount{
     font-weight: 300;
@@ -41,11 +40,23 @@
     background-color: #21a55873;
     color: var(--white-color);
 }
+.widgetLgButton.Approved:hover{
+    background-color: #21a558;
+    color: var(--white-color);
+}
 .widgetLgButton.Declined{
     background-color: rgba(255, 0, 0, 0.308);
     color: var(--white-color);
 }
+.widgetLgButton.Declined:hover{
+    background-color: rgba(255, 0, 0, 0.726);
+    color: var(--white-color);
+}
 .widgetLgButton.Pending{
     background-color: #964afa81;
+    color: var(--white-color);
+}
+.widgetLgButton.Pending:hover{
+    background-color: #964afaf8;
     color: var(--white-color);
 }

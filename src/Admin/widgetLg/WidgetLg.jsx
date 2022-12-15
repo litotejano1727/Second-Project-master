@@ -25,8 +25,24 @@ function WidgetLg() {
                 <td className="widgetLgAmout">$123.00</td>
                 <td className="widgetLgStatus"><Button type="Approved"/></td>
             </tr>
-        </table>
-        <table className="widgetLgTable">
+            <tr className="widgetLgTr">
+                <td className="widgetLgUser">
+                    <img src="https://pm1.narvii.com/7078/50d722b6756040961a509c53864cc0c0e925c6a8r1-400-711v2_uhq.jpg" alt="LatestUser" className="widgetLgImg" />
+                    <span className="widgetLgName">Susan Carol</span>
+                </td>
+                <td className="widgetLgDate">2 Jun 2021</td>
+                <td className="widgetLgAmout">$123.00</td>
+                <td className="widgetLgStatus"><Button type="Approved"/></td>
+            </tr>
+            <tr className="widgetLgTr">
+                <td className="widgetLgUser">
+                    <img src="https://pm1.narvii.com/7078/50d722b6756040961a509c53864cc0c0e925c6a8r1-400-711v2_uhq.jpg" alt="LatestUser" className="widgetLgImg" />
+                    <span className="widgetLgName">Susan Carol</span>
+                </td>
+                <td className="widgetLgDate">2 Jun 2021</td>
+                <td className="widgetLgAmout">$123.00</td>
+                <td className="widgetLgStatus"><Button type="Approved"/></td>
+            </tr>
             <tr className="widgetLgTr">
                 <td className="widgetLgUser">
                     <img src="https://pm1.narvii.com/7078/50d722b6756040961a509c53864cc0c0e925c6a8r1-400-711v2_uhq.jpg" alt="LatestUser" className="widgetLgImg" />
@@ -36,8 +52,6 @@ function WidgetLg() {
                 <td className="widgetLgAmout">$123.00</td>
                 <td className="widgetLgStatus"><Button type="Declined"/></td>
             </tr>
-        </table>
-        <table className="widgetLgTable">
             <tr className="widgetLgTr">
                 <td className="widgetLgUser">
                     <img src="https://pm1.narvii.com/7078/50d722b6756040961a509c53864cc0c0e925c6a8r1-400-711v2_uhq.jpg" alt="LatestUser" className="widgetLgImg" />
@@ -47,8 +61,15 @@ function WidgetLg() {
                 <td className="widgetLgAmout">$123.00</td>
                 <td className="widgetLgStatus"><Button type="Pending"/></td>
             </tr>
-        </table>
-        <table className="widgetLgTable">
+            <tr className="widgetLgTr">
+                <td className="widgetLgUser">
+                    <img src="https://pm1.narvii.com/7078/50d722b6756040961a509c53864cc0c0e925c6a8r1-400-711v2_uhq.jpg" alt="LatestUser" className="widgetLgImg" />
+                    <span className="widgetLgName">Susan Carol</span>
+                </td>
+                <td className="widgetLgDate">2 Jun 2021</td>
+                <td className="widgetLgAmout">$123.00</td>
+                <td className="widgetLgStatus"><Button type="Approved"/></td>
+            </tr>
             <tr className="widgetLgTr">
                 <td className="widgetLgUser">
                     <img src="https://pm1.narvii.com/7078/50d722b6756040961a509c53864cc0c0e925c6a8r1-400-711v2_uhq.jpg" alt="LatestUser" className="widgetLgImg" />
