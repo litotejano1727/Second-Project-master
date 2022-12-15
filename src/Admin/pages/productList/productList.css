@@ -1,5 +1,6 @@
 .productList{
     flex: 7;
+    width: calc(100vh - 55px);
 }
 .productListItem{
     display: flex;

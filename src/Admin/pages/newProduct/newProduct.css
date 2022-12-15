@@ -1,6 +1,7 @@
 .newProduct{
     flex: 7;
     padding: 20px;
+    width: calc(100vh - 55px);
 }
 form{
     padding: 40px;

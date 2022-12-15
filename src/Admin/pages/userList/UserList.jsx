@@ -59,7 +59,7 @@ function UserList() {
         disableSelectionOnClick
         rows={data}
         columns={columns}
-        pageSize={10}
+        pageSize={15}
         rowsPerPageOptions={[5]}
         checkboxSelection
       />

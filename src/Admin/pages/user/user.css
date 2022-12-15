@@ -2,6 +2,7 @@
 .user{
     flex: 7;
     padding: 20px;
+    width: calc(100vh - 55px);
 }
 .userTitleContainer{
     display: flex;

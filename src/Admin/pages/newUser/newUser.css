@@ -1,6 +1,7 @@
 .newUser{
-    flex: 4;
+    flex: 7;
     padding-left: 20px;
+    width: calc(100vh - 55px);
 }
 .newUserForm{
     display: flex;

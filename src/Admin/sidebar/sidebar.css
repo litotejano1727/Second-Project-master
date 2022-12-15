@@ -15,8 +15,12 @@
     margin-bottom: 10px;
 }
 .sidebarTitle{
-    font-size: var(--font-small);
-    color: var(--dark-color);
+    font-size: 18px;
+    color: var(--white-color);
+    font-weight: 800;
+    background-color: teal;
+    padding: 7px;
+    border-radius: 7px;
 }
 .sidebarList{
     list-style: none;
