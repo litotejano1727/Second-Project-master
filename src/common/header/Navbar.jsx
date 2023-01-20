@@ -36,8 +36,8 @@ const Navbar = () => {
               <li>
                 <Link to='/contact'>contact</Link>
               </li>
-              <li>
-               <Link to='/auth' onClick={login()}>Login</Link>
+              <li onClick={login()}>
+               <Link to='/auth' >Login</Link>
                </li>
             </ul>
 
