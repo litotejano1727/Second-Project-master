@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./common/header/Header";
 import Pages from "./pages/Pages";
 import Data from "./components/Data";
 import Cart from "./common/Cart/Cart";
 import Footer from "./common/footer/Footer";
 import Sdata from "./components/shops/Sdata";
+import Auth from "./Auth";
+import Admin from "./Admin/Admin";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
     const { productItems } = Data;
@@ -41,29 +44,40 @@ function App() {
     };
 
     return (
-        <>
-            <Router>
-                <Header CartItem={CartItem} />
-                <Switch>
-                    <Route path="/" exact>
+        <Router>
+            <Routes>
+                <Route
+                    exact
+                    path="/"
+                    element={<Header CartItem={CartItem} />}
+                />
+                <Route
+                    exact
+                    path="/"
+                    element={
                         <Pages
                             productItems={productItems}
                             addToCart={addToCart}
                             shopItems={shopItems}
                         />
-                    </Route>
-                    <Route path="/cart" exact>
+                    }
+                />
+                <Route
+                    path="/cart"
+                    exact
+                    element={
                         <Cart
                             CartItem={CartItem}
                             addToCart={addToCart}
                             decreaseQty={decreaseQty}
                         />
-                    </Route>
-                </Switch>
-
-                <Footer />
-            </Router>
-        </>
+                    }
+                />
+                <Route path="/login" element={<Auth />} />
+                <Route path="/admin/*" element={<Admin />} />
+                <Route path="/" exact element={<Footer />} />
+            </Routes>
+        </Router>
     );
 }
 

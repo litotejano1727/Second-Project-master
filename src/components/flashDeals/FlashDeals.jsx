@@ -7,7 +7,7 @@ const FlashDeals = ({ productItems, addToCart }) => {
     <>
       <section className='flash'>
         <div className='container'>
-          <div className='heading f_flex'>
+          <div className='heading f_flex top'>
             <i className='fa fa-bolt'></i>
             <h1>Flash Deals</h1>
           </div>

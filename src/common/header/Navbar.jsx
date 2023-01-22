@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
 
+
 const Navbar = () => {
   const [MobileMenu, setMobileMenu] = useState(false)
   return (
@@ -8,7 +9,7 @@ const Navbar = () => {
       <header className='header'>
         <div className='container d_flex'>
           <div className='categories d_flex'>
-            <span class='fa-solid fa-border-all'></span>
+            <span className='fa-solid fa-border-all'></span>
             <h4>
               Categories
             </h4>

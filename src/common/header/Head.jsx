@@ -18,9 +18,9 @@ const Head = () => {
           <div className='right RText'>
             <label className="pointer">Theme FAQ"s</label>
             <label className="pointer">Need Help?</label>
-            <span className="pointer">🏳️‍⚧️</span>
+            <span className="pointer">🏳️</span>
             <label className="pointer">EN</label>
-            <span className="pointer">🏳️‍⚧️</span>
+            <span className="pointer">🏳️</span>
             <label className="pointer">PHP</label>
           </div>
         </div>
