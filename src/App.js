@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./common/header/Header";
 import Pages from "./pages/Pages";
@@ -8,6 +8,15 @@ import Footer from "./common/footer/Footer";
 import Sdata from "./components/shops/Sdata";
 
 function App() {
+    // API testing from here
+    const [apiResponse, setAPIResponse] = useState("");
+    useEffect(() => {
+        fetch("http://localhost:9000/testAPI")
+            .then((res) => res.text())
+            .then((res) => setAPIResponse(res));
+    }, []);
+    // to here
+
     const { productItems } = Data;
     const { shopItems } = Sdata;
     const [CartItem, setCartItem] = useState([]);
@@ -42,6 +51,9 @@ function App() {
 
     return (
         <>
+            {/* part of api testing from here  */}
+            <p>{apiResponse}</p>
+            {/* to here */}
             <Router>
                 <Header CartItem={CartItem} />
                 <Switch>
@@ -60,7 +72,6 @@ function App() {
                         />
                     </Route>
                 </Switch>
-
                 <Footer />
             </Router>
         </>

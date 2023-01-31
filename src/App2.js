@@ -16,7 +16,7 @@ function App2() {
                 <Route path="/Admin/*" exact>
                     <Admin />
                 </Route>
-                <Route path='/Admin' exact>
+                <Route path="/Admin" exact>
                     <Admin />
                 </Route>
             </Switch>
