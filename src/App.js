@@ -90,7 +90,6 @@ function App() {
                 <Route path="/" element={<App />} />
 
                 <Route path="/Login" element={<Auth />} />
-                <Route path="/Admin/*" element={<Admin />} />
             </Routes>
             <Footer />
         </>
