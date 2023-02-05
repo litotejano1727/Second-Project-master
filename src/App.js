@@ -6,14 +6,21 @@ import Data from "./components/Data";
 import Cart from "./common/Cart/Cart";
 import Footer from "./common/footer/Footer";
 import Sdata from "./components/shops/Sdata";
+import axios from "axios";
 
 function App() {
     // API testing from here
-    const [apiResponse, setAPIResponse] = useState("");
+    const [apiResponse, setApiResponse] = useState(null);
+
     useEffect(() => {
-        fetch("http://localhost:9000/testAPI")
-            .then((res) => res.text())
-            .then((res) => setAPIResponse(res));
+        axios
+            .get("http://localhost:9000/")
+            .then((response) => {
+                setApiResponse(response.apiResponse);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     }, []);
     // to here
 
