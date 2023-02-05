@@ -1,119 +1,41 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./Auth.css";
-import Head from "./common/header/Head";
-import Footer from "./common/footer/Footer";
-export default function (props) {
-    let [authMode, setAuthMode] = useState("signin");
+import axios from "axios";
 
-    const changeAuthMode = () => {
-        setAuthMode(authMode === "signin" ? "signup" : "signin");
+const Login = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post("http://localhost:3000/login", {
+                username,
+                password,
+            });
+
+            localStorage.setItem("token", response.data.token);
+        } catch (error) {
+            console.error(error);
+        }
     };
 
-    if (authMode === "signin") {
-        return (
-            <>
-                <Head />
-                <div className="Auth-form-container">
-                    <form className="Auth-form">
-                        <div className="Auth-form-content">
-                            <h3 className="Auth-form-title">Sign In</h3>
-                            <div className="text-center">
-                                Not registered yet?{" "}
-                                <span
-                                    className="link-primary"
-                                    onClick={changeAuthMode}
-                                >
-                                    Sign Up
-                                </span>
-                            </div>
-                            <div className="form-group mt-3">
-                                <label>Email address</label>
-                                <input
-                                    type="email"
-                                    className="form-control mt-1"
-                                    placeholder="Enter Email"
-                                />
-                            </div>
-                            <div className="form-group mt-3">
-                                <label>Password</label>
-                                <input
-                                    type="password"
-                                    className="form-control mt-1"
-                                    placeholder="Enter password"
-                                />
-                            </div>
-                            <div className="d-grid gap-2 mt-3">
-                                <button 
-                                    type="submit"
-                                    className="btn btn-primary"
-                                >
-                                    Submit
-                                </button>
-                            </div>
-                            <p className="text-center mt-2">
-                                Forgot <a href="#">password?</a>
-                            </p>
-                        </div>
-                    </form>
-                </div>
-                <Footer />
-            </>
-        );
-    }
-
     return (
-        <>
-            <Head />
-            <div className="Auth-form-container">
-                <form className="Auth-form">
-                    <div className="Auth-form-content">
-                        <h3 className="Auth-form-title">Sign Up</h3>
-                        <div className="text-center">
-                            Already registered?{" "}
-                            <span
-                                className="link-primary"
-                                onClick={changeAuthMode}
-                            >
-                                Sign In
-                            </span>
-                        </div>
-                        <div className="form-group mt-3">
-                            <label>Full Name</label>
-                            <input
-                                type="text"
-                                className="form-control mt-1"
-                                placeholder="Enter Full Name"
-                            />
-                        </div>
-                        <div className="form-group mt-3">
-                            <label>Email address</label>
-                            <input
-                                type="email"
-                                className="form-control mt-1"
-                                placeholder="Enter Email Address"
-                            />
-                        </div>
-                        <div className="form-group mt-3">
-                            <label>Password</label>
-                            <input
-                                type="password"
-                                className="form-control mt-1"
-                                placeholder="Enter Password"
-                            />
-                        </div>
-                        <div className="d-grid gap-2 mt-3">
-                            <button type="submit" className="btn btn-primary">
-                                Submit
-                            </button>
-                        </div>
-                        <p className="text-center mt-2">
-                            Forgot <a href="#">password?</a>
-                        </p>
-                    </div>
-                </form>
-            </div>
-            <Footer />
-        </>
+        <form onSubmit={handleSubmit}>
+            <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="Username"
+            />
+            <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+            />
+            <button type="submit">Login</button>
+        </form>
     );
-}
+};
+
+export default Login;
