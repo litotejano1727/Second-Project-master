@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./common/header/Header";
 import Pages from "./pages/Pages";
 import Data from "./components/Data";
@@ -9,6 +9,9 @@ import Sdata from "./components/shops/Sdata";
 import axios from "axios";
 import Details from "./components/productpage/Details";
 import { Breadcrumb } from "react-bootstrap";
+import Auth from "./Auth";
+import Admin from "./Admin/Admin";
+import "./App.css";
 
 function App() {
     // API testing from here
@@ -60,32 +63,36 @@ function App() {
 
     return (
         <>
-            <Router>
-                <Header CartItem={CartItem} />
-                <Switch>
-                    <Route path="/" exact>
+            <Header CartItem={CartItem} />
+            <Routes>
+                <Route
+                    path="/"
+                    element={
                         <Pages
                             productItems={productItems}
                             addToCart={addToCart}
                             shopItems={shopItems}
                         />
-                    </Route>
-                    <Route
-                        path="/details"
-                        exact
-                        Details={Details}
-                        Breadcrumb={Breadcrumb}
-                    />
-                    <Route path="/cart" exact>
+                    }
+                />
+
+                <Route path="/details" element={<Details />} />
+                <Route
+                    path="/cart"
+                    element={
                         <Cart
                             CartItem={CartItem}
                             addToCart={addToCart}
                             decreaseQty={decreaseQty}
                         />
-                    </Route>
-                </Switch>
-                <Footer />
-            </Router>
+                    }
+                />
+                <Route path="/" element={<App />} />
+
+                <Route path="/Login" element={<Auth />} />
+                <Route path="/Admin/*" element={<Admin />} />
+            </Routes>
+            <Footer />
         </>
     );
 }
