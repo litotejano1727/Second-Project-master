@@ -18,28 +18,31 @@ function Admin() {
             <div className="containerAdmin">
                 <Sidebar />
                 <Routes className="childContainer">
-                    <Route exact path="/Admin">
-                        <Home />
-                    </Route>
-                    <Route exact path="/Admin/User">
-                        <UserList />
-                    </Route>
-                    <Route exact path="/Admin/User/:userId">
-                        <User />
-                    </Route>
-                    <Route exact path="/Admin/NewUser">
-                        <NewUser />
-                    </Route>
+                    <Route exact path="/Admin" element={<Home />} />
 
-                    <Route exact path="/Admin/Products">
-                        <ProductList />
-                    </Route>
-                    <Route exact path="/Admin/Product/:productrId">
-                        <Product />
-                    </Route>
-                    <Route exact path="/Admin/Newproduct">
-                        <NewProduct />
-                    </Route>
+                    <Route exact path="/Admin/User" element={<UserList />} />
+                    <Route
+                        exact
+                        path="/Admin/User/:userId"
+                        element={<User />}
+                    />
+                    <Route exact path="/Admin/NewUser" element={<NewUser />} />
+
+                    <Route
+                        exact
+                        path="/Admin/Products"
+                        element={<ProductList />}
+                    />
+                    <Route
+                        exact
+                        path="/Admin/Product/:productrId"
+                        element={<Product />}
+                    />
+                    <Route
+                        exact
+                        path="/Admin/Newproduct"
+                        element={<NewProduct />}
+                    />
                 </Routes>
             </div>
         </>
