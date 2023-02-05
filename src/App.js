@@ -14,7 +14,7 @@ function App() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:9000/")
+            .get("http://localhost:9000")
             .then((response) => {
                 setApiResponse(response.apiResponse);
             })
@@ -58,9 +58,6 @@ function App() {
 
     return (
         <>
-            {/* part of api testing from here  */}
-            <p>{apiResponse}</p>
-            {/* to here */}
             <Router>
                 <Header CartItem={CartItem} />
                 <Switch>
