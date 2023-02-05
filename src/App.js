@@ -7,6 +7,8 @@ import Cart from "./common/Cart/Cart";
 import Footer from "./common/footer/Footer";
 import Sdata from "./components/shops/Sdata";
 import axios from "axios";
+import Details from "./components/productpage/Details";
+import { Breadcrumb } from "react-bootstrap";
 
 function App() {
     // API testing from here
@@ -68,6 +70,12 @@ function App() {
                             shopItems={shopItems}
                         />
                     </Route>
+                    <Route
+                        path="/details"
+                        exact
+                        Details={Details}
+                        Breadcrumb={Breadcrumb}
+                    />
                     <Route path="/cart" exact>
                         <Cart
                             CartItem={CartItem}
