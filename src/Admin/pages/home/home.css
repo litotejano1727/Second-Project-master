@@ -2,7 +2,7 @@
     flex: 7;
     margin-top: 10px;
 }
-.homeWidget{
-    display: flex;
+.homeWidget {
+    display: flex !important;
     margin: 20px;
 }

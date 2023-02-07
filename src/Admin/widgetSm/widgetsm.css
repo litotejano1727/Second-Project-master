@@ -1,50 +1,50 @@
-.widgetSm{
+.widgetSm {
     flex: 1;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 20px;
     margin-right: 20px;
 }
-.widgetSmTitle{
+.widgetSmTitle {
     font-size: var(--font-large);
     font-weight: 600;
 }
-.widgetSmImg{
+.widgetSmImg {
     font: 40px;
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
 }
-.widgetSmList{
+.widgetSmList {
     padding: 0;
     margin: 0;
 }
-.widgetSmListItem{
+.widgetSmListItem {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 20px 0px;
 }
-.widgetSmUser{
+.widgetSmUser {
     display: flex;
     font-display: column;
 }
-.widgetSmUsername{
+.widgetSmUsername {
     font-weight: 600;
 }
-.widgetSmuderTitle{
+.widgetSmuderTitle {
     font-weight: 300;
 }
-.widgetSmButton{
+.widgetSmButton {
     display: flex;
     align-items: center;
     border-radius: 10px;
     padding: 7px 10px;
     cursor: pointer;
 }
-.widgetSmIcon{
+.widgetSmIcon {
     font-size: var(--font16) !important;
     margin-right: 5px;
 }
-.widgetSmButton:hover{
+.widgetSmButton:hover {
     background-color: rgba(0, 128, 0, 0.534);
 }

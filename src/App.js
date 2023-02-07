@@ -12,6 +12,7 @@ import { Breadcrumb } from "react-bootstrap";
 import Auth from "./Auth";
 import Admin from "./Admin/Admin";
 import "./App.css";
+import ProductList from "./Product";
 
 function App() {
     // API testing from here
@@ -88,6 +89,7 @@ function App() {
                     }
                 />
                 <Route path="/" element={<App />} />
+                <Route path="/productlist" element={<ProductList />} />
 
                 <Route path="/login" element={<Auth />} />
             </Routes>

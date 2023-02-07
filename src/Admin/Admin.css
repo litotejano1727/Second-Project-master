@@ -6,40 +6,38 @@
     --primary-color: #21a558;
     --second-color: #794afa;
     --secondary-dark-color: #1e5631;
-  
+
     --white-color: #fff;
     --light-bg-color: #f3fcf4;
     --light-text-color: #7c899a;
     --border-color: #e5e8ec;
     --dark-color: #0a021c;
     --warning-color: red;
-  
+
     --font-large: 30px;
     --font-small: 14px;
     --font16: 16px;
     --font-smaller: 12px;
-  
+
     --percent100: 100%;
     --percent50: 50%;
-  
+
     --fw3: 300;
     --fw4: 400;
     --fw5: 500;
     --fw6: 600;
     --fw7: 700;
     --fw8: 800;
-  
+
     --trans-background-color: background-color 0.3s, color 0.3s;
     --trans-background: background-color 0.3s;
     --trans-color: color 0.3s;
-  }
-*{
-    font-family: "Source Serif Pro", serif;
-}
-.containerAdmin{
-  display: flex;
 }
 
-.link{
-  color: inherit;
+.containerAdmin {
+    display: flex;
+}
+
+.link {
+    color: inherit;
 }

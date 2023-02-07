@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../productpage/Details.css";
 import SoldIcon from "../productpage/images/sold.png";
+import axios from "axios";
 const product = {
     // Product Data
     id: 1,
@@ -131,8 +132,8 @@ const Details = () => {
 
     return (
         <React.Fragment>
-            <section className="product-details">
-                <div className="product-page-img">
+            <section className="prod-details">
+                <div className="prod-page-img">
                     <div className="big-images">
                         {product.images.map((image, index) => (
                             <div
@@ -188,12 +189,12 @@ const Details = () => {
                         ))}
                     </div>
                 </div>
-                <div className="product-page-details">
+                <div className="prod-page-details">
                     <strong>{product.name}</strong>
-                    <p className="product-category">
+                    <p className="prod-category">
                         {product.brand} - {product.category}
                     </p>
-                    <p className="product-price">
+                    <p className="prod-price">
                         $
                         {Math.round(
                             product.price -
@@ -202,7 +203,7 @@ const Details = () => {
                         <del>${product.price}</del>
                     </p>
                     <p className="small-desc">{product.desc}</p>
-                    <div className="product-options">
+                    <div className="prod-options">
                         <span>Colors</span>
                         {product.colors.map((color) => (
                             <div key={color}>
@@ -216,11 +217,11 @@ const Details = () => {
                             </div>
                         ))}
                     </div>
-                    <div className="product-page-offer">
+                    <div className="prod-page-offer">
                         <i className="fa-solid fa-tag" /> {product.discount} %
                         Discount
                     </div>
-                    <div className="product-sold">
+                    <div className="prod-sold">
                         <img src={SoldIcon} alt="SoldIcon" />
                         <strong>
                             {product.sold} <span> Products Sold</span>
@@ -236,8 +237,8 @@ const Details = () => {
                     </div>
                 </div>
             </section>
-            <section className="product-all-info">
-                <ul className="product-info-menu">
+            <section className="prod-all-info">
+                <ul className="prod-info-menu">
                     {product.infos.map((info) => (
                         <li
                             key={info.title}
