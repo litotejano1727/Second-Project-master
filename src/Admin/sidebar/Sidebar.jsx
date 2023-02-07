@@ -45,7 +45,7 @@ function Sidebar() {
                             Products
                         </li>
                     </Link>
-                    <Link to="/" className='link'>
+                    <Link to="/Admin" className='link'>
                         <li className="sidebarListItem">
                             <AttachMoney className='sidebarIcon'/> 
                             Transactions
