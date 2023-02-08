@@ -17,12 +17,6 @@ function Sidebar() {
                             Home
                         </li>
                     </Link>
-                    <Link to="/Admin/User" className='link'>
-                        <li className="sidebarListItem">
-                            <PermIdentity className='sidebarIcon'/> 
-                            Users
-                        </li>
-                    </Link>
                     <Link to="/Admin/newUser" className='link'>
                         <li className="sidebarListItem">
                             <PersonAddAlt className='sidebarIcon' />
