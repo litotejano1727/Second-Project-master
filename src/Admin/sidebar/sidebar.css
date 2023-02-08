@@ -16,13 +16,15 @@
     font-size: 18px;
     color: var(--white-color);
     font-weight: 800;
-    background-color: teal;
+    background-color: var(--secondary-dark-color);
     padding: 7px;
     border-radius: 7px;
 }
 .sidebarList {
     list-style: none;
     padding: 5px;
+    cursor: pointer;
+
 }
 .sidebarListItem {
     padding: 5px;
@@ -32,7 +34,7 @@
     border-radius: 5px;
 }
 .sidebarListItem:hover {
-    background-color: teal;
+    background-color: #e94560;
     color: white;
 }
 .sidebarIcon {

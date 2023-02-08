@@ -3,9 +3,9 @@
 @import url(./sidebar/sidebar.css);
 @import url(./pages/home/home.css);
 :root {
-    --primary-color: #21a558;
+    --primary-color:#0f3460;
     --second-color: #794afa;
-    --secondary-dark-color: #1e5631;
+    --secondary-dark-color: #e94560;
 
     --white-color: #fff;
     --light-bg-color: #f3fcf4;

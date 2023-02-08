@@ -18,13 +18,13 @@ function Admin() {
             <div className="containerAdmin">
                 <Sidebar />
                 <Routes className="childContainer">
-                    <Route exact path="/Admin" element={<Home />}/>
-                    <Route exact path="/Admin/User" element={<UserList />}/>
-                    <Route exact path="/Admin/User/:userId" element={<User />}/>
-                    <Route exact path="/Admin/NewUser" element={<NewUser />}/>
-                    <Route exact path="/Admin/Products" element={<ProductList />}/>
-                    <Route exact path="/Admin/Product/:productrId" element={<Product />}/>
-                    <Route exact path="/Admin/Newproduct" element={<NewProduct />}/>
+                    <Route  path="/" element={<Home />}/>
+                    <Route  path="/User" element={<UserList />}/>
+                    <Route  path="/User/:userId" element={<User />}/>
+                    <Route  path="/NewUser" element={<NewUser />}/>
+                    <Route  path="/Products" element={<ProductList />}/>
+                    <Route  path="/Product/:productrId" element={<Product />}/>
+                    <Route  path="/Newproduct" element={<NewProduct />}/>
                 </Routes>
             </div>
         </>
