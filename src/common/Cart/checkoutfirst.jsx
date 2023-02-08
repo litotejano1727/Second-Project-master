@@ -1,10 +1,12 @@
 import react from  'react';
-import './checkoutfirts.css';
+import './App.css';
+import Cart from './Cart';
 
-function CheckoutOne() {
+function App() {
   return (
-    <section>
-    <div className="container">
+    <>
+<div className='wrapper'>
+    <div className="container col1">
     <div className="row">
       <div>
         <div>
@@ -110,10 +112,12 @@ Guest CheckOut
       </div>
     </div>
   </div>
-  </section>
-
-
+<div className='second col-2'>
+<cart />
+  </div>
+  </div>
+  </>
   );
 }
 
-export default CheckoutOne;
+export default App;
