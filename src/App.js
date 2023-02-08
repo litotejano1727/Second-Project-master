@@ -8,7 +8,7 @@ function app2() {
   return (
     <Routes>
         <Route path='/Admin/*' element={<Admin/>} />
-        <Route path='/' element={<Onlineshop/>} />
+        <Route path='/*' element={<Onlineshop/>} />
         
     </Routes>
   )
