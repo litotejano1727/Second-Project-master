@@ -17,10 +17,10 @@ function Sidebar() {
                             Home
                         </li>
                     </Link>
-                    <Link to="/Admin/newUser" className='link'>
+                    <Link to="/Admin/User" className='link'>
                         <li className="sidebarListItem">
                             <PersonAddAlt className='sidebarIcon' />
-                            Add Users
+                            Users
                         </li>
                     </Link>
                     <Link to="/Admin/Products" className='link'>

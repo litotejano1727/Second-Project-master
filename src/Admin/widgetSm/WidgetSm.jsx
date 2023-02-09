@@ -1,5 +1,5 @@
 import { Visibility } from "@mui/icons-material"
-import "./widgetSm.css"
+import "./widgetsm.css"
 
 function WidgetSm() {
   return (
