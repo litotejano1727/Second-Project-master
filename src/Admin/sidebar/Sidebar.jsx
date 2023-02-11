@@ -1,7 +1,8 @@
 import React from 'react'
 import './sidebar.css'
-import { Home, Timeline, TrendingUp, PermIdentity, Storefront, AttachMoney, BarChart, MailOutline, DynamicFeed, ChatBubbleOutline, WorkOutline, ReportProblem} from '@mui/icons-material'
+import { Home, Timeline, PermIdentity, Storefront, BarChart, MailOutline, DynamicFeed, ChatBubbleOutline, WorkOutline, ReportProblem, AddShoppingCart, PersonAddAlt} from '@mui/icons-material'
 import { Link } from 'react-router-dom'
+
 
 function Sidebar() {
   return (
@@ -16,26 +17,9 @@ function Sidebar() {
                             Home
                         </li>
                     </Link>
-                    <Link to="/admin" className='link'>
-                        <li className="sidebarListItem">
-                            <Timeline className='sidebarIcon'/> 
-                            Analiytics
-                        </li>
-                    </Link>
-                    <Link to="/admin" className='link'>
-                        <li className="sidebarListItem">
-                            <TrendingUp className='sidebarIcon'/> 
-                            Sales
-                        </li>
-                    </Link>
-                </ul>
-            </div>
-            <div className="sidebarMenu">
-                <h3 className="sidebarTitle">Quick Menu</h3>
-                <ul>
                     <Link to="/Admin/User" className='link'>
                         <li className="sidebarListItem">
-                            <PermIdentity className='sidebarIcon'/> 
+                            <PersonAddAlt className='sidebarIcon' />
                             Users
                         </li>
                     </Link>
@@ -45,15 +29,15 @@ function Sidebar() {
                             Products
                         </li>
                     </Link>
-                    <Link to="/Admin" className='link'>
+                    <Link to="/Admin/newproduct" className='link'>
                         <li className="sidebarListItem">
-                            <AttachMoney className='sidebarIcon'/> 
-                            Transactions
+                            <AddShoppingCart className='sidebarIcon'/>
+                            Add Products
                         </li>
                     </Link>
                     <li className="sidebarListItem">
                         <BarChart className='sidebarIcon'/> 
-                        Reports
+                        Transactions
                     </li>
                 </ul>
             </div>
