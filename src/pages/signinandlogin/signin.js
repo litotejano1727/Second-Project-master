@@ -1,6 +1,8 @@
 import React from 'react';
 import {useFormik} from "formik";
 import * as Yup from "yup";
+import "./style.css";
+import {Link} from "react-router-dom";
 
 export default function SignUp() {
 
@@ -29,8 +31,18 @@ confirmPassword:Yup.string().oneOf([Yup.ref('password'),null], 'Password must ma
 })
    return (
     <div className='Auth-form-container'>
-        <form onSubmit={formik.handleSubmit} className="Auth-form">
-        <div>Sign-In</div>
+    <form onSubmit={formik.handleSubmit} className="Auth-form">
+    <div className="Auth-form-content">
+    <h3 className="Auth-form-title">Sign-In</h3>
+    <div className="text-center">
+                            Not registered yey? {" "}
+                            <Link
+                                className="link-primary"
+                                to="./signup.js"
+                            >
+                                Sign-Up
+                            </Link>
+                        </div>
     <div className='input-containerThree'>
             <input
             id="email"
@@ -57,6 +69,8 @@ value={formik.values.password}
 </div>
 <div>
 <button type='submit'>Submit</button>
+</div>
+<p className="text-center mt-2">Forgot <a href="#">password?</a></p>
 </div>
 </form>
 </div>       
