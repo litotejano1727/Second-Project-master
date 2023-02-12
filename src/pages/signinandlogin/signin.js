@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import "./style.css";
 import {Link} from "react-router-dom";
 
-export default function SignUp() {
+export default function SignIn() {
 
 const formik = useFormik(
 {
