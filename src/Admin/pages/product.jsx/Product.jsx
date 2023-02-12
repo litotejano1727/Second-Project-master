@@ -7,6 +7,8 @@ import { ProductData } from "./ProductData"
 
 
 function Product() {
+    
+    
   return (
     <div className="product">
         <div className="productTitleContainer">
