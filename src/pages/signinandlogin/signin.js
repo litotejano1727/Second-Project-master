@@ -32,7 +32,13 @@ confirmPassword:Yup.string().oneOf([Yup.ref('password'),null], 'Password must ma
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
+        if (data.success) {
+            
+            window.location.href = '/home';
+          } else {
+          
+            console.error(data.message);
+          }
       })
       .catch(error => {
         console.error(error);
@@ -41,6 +47,8 @@ confirmPassword:Yup.string().oneOf([Yup.ref('password'),null], 'Password must ma
 
 })
    return (
+  <>
+    
     <div className='Auth-form-container'>
     <form onSubmit={formik.handleSubmit} className="Auth-form">
     <div className="Auth-form-content">
@@ -85,8 +93,9 @@ value={formik.values.password}
 </div>
 </form>
 </div>       
+
+</>
   )
 }
 
 
-//try
