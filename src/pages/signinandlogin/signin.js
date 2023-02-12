@@ -1,7 +1,8 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import "../signinandlogin/style.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import { Link } from "react-router-dom";
 
 export default function SignIn() {
@@ -61,7 +62,8 @@ export default function SignIn() {
                                 Sign-Up
                             </Link>
                         </div>
-                        <div className="input-containerThree">
+                        <div className="input-containerThree mt-3">
+                            <label>Email address</label>
                             <input
                                 id="email"
                                 name="email"
@@ -70,12 +72,14 @@ export default function SignIn() {
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.email}
+                                className="form-control mt-1"
                             />
                             {formik.touched.email && formik.errors.email ? (
                                 <p>{formik.errors.email}</p>
                             ) : null}
                         </div>
-                        <div className="input-containerFour">
+                        <div className="input-containerFour mt-3" >
+                            <label>Password</label>
                             <input
                                 id="password"
                                 name="password"
@@ -84,6 +88,7 @@ export default function SignIn() {
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.password}
+                                className="form-control mt-1"
                             />
                             {formik.touched.password &&
                             formik.errors.password ? (
@@ -91,8 +96,8 @@ export default function SignIn() {
                             ) : null}
                         </div>
 
-                        <div>
-                            <button type="submit">Submit</button>
+                        <div className="d-grid gap-2 mt-3">
+                            <button type="submit" className="btn btn-primary">Submit</button>
                         </div>
                         <p className="text-center mt-2">
                             Forgot <a href="#">password?</a>

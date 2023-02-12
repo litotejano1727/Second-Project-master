@@ -2,9 +2,11 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
-import "../signinandlogin/style.css";
+import "./style.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function SignUp() {
+
+export default function SignUp() {  
     const formik = useFormik({
         initialValues: {
             firstName: "",
@@ -56,7 +58,7 @@ export default function SignUp() {
                             Sign-In
                         </Link>
                     </div>
-                    <div className="input-container">
+                    <div className="input-container mt-3">
                         <label>Fist Name</label>
                         <input
                             id="firstName"
@@ -66,12 +68,13 @@ export default function SignUp() {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.firstName}
+                            className="form-control mt-1"
                         />
                         {formik.touched.firstName && formik.errors.firstName ? (
                             <p>{formik.errors.firstName}</p>
                         ) : null}
                     </div>
-                    <div className="input-containerTwo">
+                    <div className="input-containerTwo mt-3">
                         <label>last Name</label>
                         <input
                             id="lastName"
@@ -81,12 +84,13 @@ export default function SignUp() {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.lastName}
+                            className="form-control mt-1"
                         />
                         {formik.touched.lastName && formik.errors.lastName ? (
                             <p>{formik.errors.lastName}</p>
                         ) : null}
                     </div>
-                    <div className="input-containerThree">
+                    <div className="input-containerThree mt-3">
                         <label>Email</label>
                         <input
                             id="email"
@@ -96,12 +100,13 @@ export default function SignUp() {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.email}
+                            className="form-control mt-1"
                         />
                         {formik.touched.password && formik.errors.password ? (
                             <p>{formik.errors.password}</p>
                         ) : null}
                     </div>
-                    <div className="input-containerFour">
+                    <div className="input-containerFour mt-3">
                         <label>Password</label>
                         <input
                             id="password"
@@ -111,12 +116,13 @@ export default function SignUp() {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.password}
+                            className="form-control mt-1"
                         />
                         {formik.touched.email && formik.errors.email ? (
                             <p>{formik.errors.email}</p>
                         ) : null}
                     </div>
-                    <div className="input-containerFour">
+                    <div className="input-containerFour mt-3">
                         <label>Confirm Password</label>
                         <input
                             id="Password"
@@ -126,13 +132,14 @@ export default function SignUp() {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.password}
+                            className="form-control mt-1"
                         />
                         {formik.touched.email && formik.errors.email ? (
                             <p>{formik.errors.email}</p>
                         ) : null}
                     </div>
-                    <div>
-                        <button type="submit">Submit</button>
+                    <div className="d-grid gap-2 mt-3" >
+                        <button type="submit" className="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </form>
