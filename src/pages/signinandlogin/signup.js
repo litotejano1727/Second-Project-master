@@ -52,7 +52,7 @@ export default function SignUp() {
                     <h3 className="Auth-form-title">Sign-Up</h3>
                     <div className="text-center">
                         already registered?{" "}
-                        <Link className="link-primary" to="./signin.js">
+                        <Link className="link-primary" to="./signin">
                             Sign-In
                         </Link>
                     </div>
@@ -97,15 +97,15 @@ export default function SignUp() {
                             onBlur={formik.handleBlur}
                             value={formik.values.email}
                         />
-                        {formik.touched.email && formik.errors.email ? (
-                            <p>{formik.errors.email}</p>
+                        {formik.touched.password && formik.errors.password ? (
+                            <p>{formik.errors.password}</p>
                         ) : null}
                     </div>
                     <div className="input-containerFour">
                         <label>Password</label>
                         <input
-                            id="Password"
-                            name="Password"
+                            id="password"
+                            name="password"
                             type="text"
                             placeholder="Password"
                             onChange={formik.handleChange}
