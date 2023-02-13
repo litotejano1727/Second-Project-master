@@ -54,7 +54,7 @@ export default function SignUp() {
                     <h3 className="Auth-form-title">Sign-Up</h3>
                     <div className="text-center">
                         already registered?{" "}
-                        <Link className="link-primary" to="./signin">
+                        <Link className="link-primary" to="/signin.js">
                             Sign-In
                         </Link>
                     </div>
