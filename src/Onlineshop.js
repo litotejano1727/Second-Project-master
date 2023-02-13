@@ -96,11 +96,11 @@ function Onlineshop() {
 
                 <Route path="/signup" element={<SignUp/>} />
                 <Route path="/signin" element={<SignIn />} />
-<<<<<<< HEAD
+{/* <<<<<<< HEAD
       
 =======
 
->>>>>>> abfcc77b8e5cec1c4a8e72100dc620069740c7b8
+>>>>>>> abfcc77b8e5cec1c4a8e72100dc620069740c7b8 */}
             </Routes>
             <Footer />
             
