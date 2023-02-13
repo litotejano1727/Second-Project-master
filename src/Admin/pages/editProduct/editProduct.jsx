@@ -40,7 +40,7 @@ const EditProduct = () => {
     }
 
     axios
-      .put("/editproducts/:id", {
+      .put(`${API_URL}/${id}`, {
         name,
         price,
         category,
