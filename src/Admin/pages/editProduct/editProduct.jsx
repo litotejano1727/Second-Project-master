@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-const API_URL = `http://localhost:9000/editproducts`;
+const API_URL = `http://localhost:9000/editproduct`;
 const EditProduct = () => {
   const { id } = useParams();
 
