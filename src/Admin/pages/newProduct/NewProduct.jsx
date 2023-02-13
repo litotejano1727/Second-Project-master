@@ -27,7 +27,12 @@ const NewProduct = () => {
       .then((res) => {
         console.log(res.data);
         alert("Product successfully added!");
-      })
+        setName("");
+        setPrice("");
+        setCategory("");
+        setImage("");
+        setDescription("");
+    })
       .catch((err) => {
         console.error(err);
         alert("Something went wrong. Please try again later.");
