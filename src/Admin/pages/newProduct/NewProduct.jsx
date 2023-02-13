@@ -7,6 +7,9 @@ const NewProduct = () => {
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
+  const [image2, setImage2] = useState("");
+const [image3, setImage3] = useState("");
+
   const [description, setDescription] = useState("");
 
   const handleSubmit = (e) => {
@@ -22,6 +25,8 @@ const NewProduct = () => {
         price,
         category,
         image,
+        image2,
+        image3,
         description,
       })
       .then((res) => {
@@ -31,6 +36,8 @@ const NewProduct = () => {
         setPrice("");
         setCategory("");
         setImage("");
+        setImage2("");
+        setImage3("");
         setDescription("");
     })
       .catch((err) => {
@@ -79,6 +86,26 @@ const NewProduct = () => {
             onChange={(event) => setImage(event.target.value)}
           />
         </div>
+        <div className="addProductItem">
+  <label htmlFor="Image2">Image 2</label>
+  <input
+    type="text"
+    id="Image2"
+    value={image2}
+    onChange={(event) => setImage2(event.target.value)}
+  />
+</div>
+
+<div className="addProductItem">
+  <label htmlFor="Image3">Image 3</label>
+  <input
+    type="text"
+    id="Image3"
+    value={image3}
+    onChange={(event) => setImage3(event.target.value)}
+  />
+</div>
+
         <div className="addProductItem">
           <label htmlFor="description">Description</label>
           <input
