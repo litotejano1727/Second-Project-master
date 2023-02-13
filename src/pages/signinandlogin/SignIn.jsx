@@ -1,11 +1,12 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { Link } from "react-router-dom";
+import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { Link } from "react-router-dom";
 
-export default function SignIn() {
+function SignIn() {
     const formik = useFormik({
         initialValues: {
             email: "",
@@ -50,8 +51,8 @@ export default function SignIn() {
                 });
         },
     });
-    return (
-        <>
+  return (
+    <>
             <div className="Auth-form-container">
                 <form onSubmit={formik.handleSubmit} className="Auth-form">
                     <div className="Auth-form-content">
@@ -106,5 +107,7 @@ export default function SignIn() {
                 </form>
             </div>
         </>
-    );
+  )
 }
+
+export default SignIn

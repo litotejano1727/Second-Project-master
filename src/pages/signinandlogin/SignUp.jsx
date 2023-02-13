@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
-export default function SignUp() {  
+export default function SignUp() {
     const formik = useFormik({
         initialValues: {
             firstName: "",
@@ -47,8 +46,8 @@ export default function SignUp() {
                 });
         },
     });
-    return (
-        <div className="Auth-form-container">
+  return (
+    <div className="Auth-form-container">
             <form onSubmit={formik.handleSubmit} className="Auth-form">
                 <div className="Auth-form-content">
                     <h3 className="Auth-form-title">Sign-Up</h3>
@@ -144,7 +143,5 @@ export default function SignUp() {
                 </div>
             </form>
         </div>
-    );
+  )
 }
-
-//try

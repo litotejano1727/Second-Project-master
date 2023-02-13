@@ -11,8 +11,10 @@ import Details from "./components/productpage/Details";
 import { Breadcrumb } from "react-bootstrap";
 import "./App.css";
 import ProductList from "./Product";
-import SignIn from "./signinandlogin/Signin";
-import SignUp from "./signinandlogin/Signup";
+import SignUp from "./pages/signinandlogin/SignUp";
+import SignIn from "./pages/signinandlogin/SignIn";
+
+
 
 
 function Onlineshop() {
@@ -92,11 +94,12 @@ function Onlineshop() {
                 {/* <Route path="/" element={<App />} /> */}
                 <Route path="/productlist" element={<ProductList />} />
 
-                <Route path="/signup" element={<SignUp />} />
+                <Route path="/signup" element={<SignUp/>} />
                 <Route path="/signin" element={<SignIn />} />
 
             </Routes>
             <Footer />
+            
         </>
     );
 }
