@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link, NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
   const [MobileMenu, setMobileMenu] = useState(false)
@@ -33,7 +33,7 @@ const Navbar = () => {
                 <Link to='/contact'>contact</Link>
               </li>
               <li>
-               <NavLink to='/login' >Login</NavLink>
+               <Link to='/signin'>Login</Link>
                </li>
             </ul>
 
