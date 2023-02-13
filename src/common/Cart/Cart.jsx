@@ -1,5 +1,6 @@
 import React from "react"
 import "./style.css"
+import { Link } from "react-router-dom"
 
 const Cart = ({ CartItem, addToCart, decreaseQty }) => {
   const totalPrice = CartItem.reduce((price, item) => price + item.qty * item.price, 0)
@@ -50,7 +51,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
             <div className=' d_flex'>
               <h4>Total Price :</h4>
               <h3>₱{totalPrice}.00</h3>
-              <button className="btn btn-primary">Checkout</button>
+<Link to="/checkoutfirst.js" className="btn btn-primary">Checkout</Link>
             </div>
           </div>
         </div>
