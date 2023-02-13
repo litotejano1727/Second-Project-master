@@ -8,12 +8,12 @@ import Footer from "./common/footer/Footer";
 import Sdata from "./components/shops/Sdata";
 import axios from "axios";
 import Details from "./components/productpage/Details";
-import SignIn from "./pages/signinandlogin/signin";
 import { Breadcrumb } from "react-bootstrap";
-
 import "./App.css";
 import ProductList from "./Product";
-import SignUp from "./pages/signinandlogin/signup";
+import SignIn from "./signinandlogin/Signin";
+import SignUp from "./signinandlogin/Signup";
+
 
 function Onlineshop() {
     // API testing from here
@@ -94,6 +94,7 @@ function Onlineshop() {
 
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/signin" element={<SignIn />} />
+
             </Routes>
             <Footer />
         </>
