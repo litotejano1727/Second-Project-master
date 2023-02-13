@@ -1,0 +1,40 @@
+.newProduct {
+    flex: 7;
+    padding: 20px;
+    width: calc(100vh - 55px);
+}
+form {
+    padding: 40px;
+    z-index: 1;
+}
+.addProductForm {
+    margin-top: 10px;
+}
+.addProductItem {
+    width: 250px;
+    display: flex !important;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.addProductItem > label {
+    color: teal;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.addProductItem > input {
+    padding: 10px;
+    border: solid var(--secondary-dark-color) 1px;
+    border-radius: 5px;
+}
+.addProductItem > select {
+    padding: 10px;
+}
+.addProductButton {
+    margin-top: 10px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
