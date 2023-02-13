@@ -11,6 +11,8 @@ const EditProduct = () => {
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
+  const [image2, setImage2] = useState("");
+  const [image3, setImage3] = useState("");
   const [description, setDescription] = useState("");
   const [error, setError] = useState(null);
 
@@ -33,7 +35,7 @@ const EditProduct = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!name || !price || !category || !image || !description) {
+    if (!name || !price || !category || !image ||!image2 ||!image3|| !description) {
       return alert("All fields are required.");
     }
 
@@ -43,6 +45,8 @@ const EditProduct = () => {
         price,
         category,
         image,
+        image2,
+        image3,
         description,
       })
       .then((res) => {
@@ -98,6 +102,24 @@ const EditProduct = () => {
             id="Image"
             value={image}
             onChange={(event) => setImage(event.target.value)}
+            />
+            </div>
+            <div className="editProductItem">
+            <label htmlFor="Image2">Image</label>
+            <input
+            type="text"
+            id="Image2"
+            value={image2}
+            onChange={(event) => setImage2(event.target.value)}
+            />
+            </div>
+            <div className="editProductItem">
+            <label htmlFor="Image3">Image</label>
+            <input
+            type="text"
+            id="Image3"
+            value={image3}
+            onChange={(event) => setImage3(event.target.value)}
             />
             </div>
             <div className="editProductItem">
