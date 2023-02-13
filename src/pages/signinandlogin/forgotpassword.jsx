@@ -6,12 +6,12 @@ import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
-function SignIn() {
+function ForgotPassword() {
     const formik = useFormik({
         initialValues: {
             email: "",
             password: "",
-            confirmPassword: "",
+           
         },
         validationSchema: Yup.object({
             email: Yup.string()
@@ -31,24 +31,7 @@ function SignIn() {
         }),
 
         onSubmit: (values) => {
-            fetch("/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(values),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    if (data.success) {
-                        window.location.href = "/home";
-                    } else {
-                        console.error(data.message);
-                    }
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
+            <p>Please Check your Email for Password Reset Link</p>
         },
     });
   return (
@@ -56,13 +39,9 @@ function SignIn() {
             <div className="Auth-form-container">
                 <form onSubmit={formik.handleSubmit} className="Auth-form">
                     <div className="Auth-form-content">
-                        <h3 className="Auth-form-title">Sign-In</h3>
+                        <h3 className="Auth-form-title"> Forgot Password </h3>
                         <div className="text-center">
-                            Not registered yet?{" "}
-                            <Link className="link-primary" to="/signup">
-                                Sign-Up
-                            </Link>
-                        </div>
+                                    Link will be send to your registered Email          </div>
                         <div className="input-containerThree mt-3">
                             <label>Email address</label>
                             <input
@@ -80,7 +59,7 @@ function SignIn() {
                             ) : null}
                         </div>
                         <div className="input-containerFour mt-3" >
-                            <label>Password</label>
+                            <label>Last Password Remember</label>
                             <input
                                 id="password"
                                 name="password"
@@ -101,7 +80,7 @@ function SignIn() {
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </div>
                         <p className="text-center mt-2">
-                            Forgot <Link to="/forgotpassword.js">password?</Link>
+                            Try to <Link to="/signin">LogIn</Link>
                         </p>
                     </div>
                 </form>
@@ -110,4 +89,4 @@ function SignIn() {
   )
 }
 
-export default SignIn
+export default ForgotPassword
