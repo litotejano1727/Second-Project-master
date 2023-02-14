@@ -91,16 +91,23 @@ const FlashCard = ({ addToCart }) => {
               <div className='product mtop'>
                 <div className='img'>
                   <span className='discount'>{productItems.discount}% Off</span>
-                  <img className="flash-product" src={productItems.cover} alt='' />
+                  <img className="flash-product" src={productItems.image} alt='' />
                   <div className='product-like'>
                     <label>{count}</label>
                     <i className='fa fa-heart' onClick={increment} />
               </div>
             </div>
             <div className='text'>
-              <p className='title'>{productItems.title}</p>
+              <p className='title'>{productItems.name}</p>
+              <div className='rate'>
+                    <i className='fa fa-star'></i>
+                    <i className='fa fa-star'></i>
+                    <i className='fa fa-star'></i>
+                    <i className='fa fa-star'></i>
+                    <i className='fa fa-star'></i>
+                  </div>
               <p className='price'>
-                {productItems.price}
+                P {productItems.price.toLocaleString()}.00
                 <span className='price-original'>
                   {productItems.priceOriginal}
                 </span>
