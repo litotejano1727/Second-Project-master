@@ -8,9 +8,11 @@ const NewProduct = () => {
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
   const [image2, setImage2] = useState("");
-const [image3, setImage3] = useState("");
-
+  const [image3, setImage3] = useState("");
   const [description, setDescription] = useState("");
+  const [stocks, setStocks] = useState("");
+  const [discount, setDiscount] = useState("");
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,6 +30,8 @@ const [image3, setImage3] = useState("");
         image2,
         image3,
         description,
+        stocks,
+        discount
       })
       .then((res) => {
         console.log(res.data);
@@ -39,6 +43,8 @@ const [image3, setImage3] = useState("");
         setImage2("");
         setImage3("");
         setDescription("");
+        setStocks("");
+        setDiscount("");
     })
       .catch((err) => {
         console.error(err);
@@ -115,6 +121,22 @@ const [image3, setImage3] = useState("");
             onChange={(event) => setDescription(event.target.value)}
           />
         </div>
+        <div className="addProductItem">
+            <label htmlFor="stocks">Stocks</label>
+            <input
+            id="Stocks"
+            value={stocks}
+            onChange={(event) => setStocks(event.target.value)}
+            />
+            </div>
+            <div className="addProductItem">
+            <label htmlFor="Discount">Discount</label>
+            <input
+            id="Discount"
+            value={discount}
+            onChange={(event) => setDiscount(event.target.value)}
+            />
+            </div>
         <button className="addProductButton" type="submit">
           Create
         </button>

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-const API_URL = `http://localhost:9000/editproducts`;
+const API_URL = `http://localhost:9000/editproduct`;
 const EditProduct = () => {
   const { id } = useParams();
 
@@ -14,6 +14,8 @@ const EditProduct = () => {
   const [image2, setImage2] = useState("");
   const [image3, setImage3] = useState("");
   const [description, setDescription] = useState("");
+  const [stocks, setStocks] = useState("");
+  const [discount, setDiscount] = useState("");
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -34,8 +36,18 @@ const EditProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (
+      !name ||
+      !price ||
+      !category ||
+      !image ||
+      !image2 ||
+      !image3 ||
+      !description ||
+      !stocks ||
+      !discount
+    ) {
 
-    if (!name || !price || !category || !image ||!image2 ||!image3|| !description) {
       return alert("All fields are required.");
     }
 
@@ -128,6 +140,22 @@ const EditProduct = () => {
             id="Description"
             value={description}
             onChange={(event) => setDescription(event.target.value)}
+            />
+            </div>
+            <div className="editProductItem">
+            <label htmlFor="stocks">Stocks</label>
+            <textarea
+            id="Stocks"
+            value={stocks}
+            onChange={(event) => setStocks(event.target.value)}
+            />
+            </div>
+            <div className="editProductItem">
+            <label htmlFor="Discount">Discount</label>
+            <textarea
+            id="Discount"
+            value={discount}
+            onChange={(event) => setDiscount(event.target.value)}
             />
             </div>
             <button type="submit">Save Changes</button>

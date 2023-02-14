@@ -14,9 +14,6 @@ import ProductList from "./Product";
 import SignUp from "./pages/signinandlogin/SignUp";
 import SignIn from "./pages/signinandlogin/SignIn";
 
-
-
-
 function Onlineshop() {
     // API testing from here
     const [apiResponse, setApiResponse] = useState(null);
@@ -94,16 +91,10 @@ function Onlineshop() {
                 {/* <Route path="/" element={<App />} /> */}
                 <Route path="/productlist" element={<ProductList />} />
 
-                <Route path="/signup" element={<SignUp/>} />
+                <Route path="/signup" element={<SignUp />} />
                 <Route path="/signin" element={<SignIn />} />
-{/* <<<<<<< HEAD
-      
-=======
-
->>>>>>> abfcc77b8e5cec1c4a8e72100dc620069740c7b8 */}
             </Routes>
             <Footer />
-            
         </>
     );
 }

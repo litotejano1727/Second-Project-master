@@ -3,3 +3,7 @@
     min-height: 460px;
     max-height: 460px;
 }
+.text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
