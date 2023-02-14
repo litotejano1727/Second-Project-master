@@ -101,7 +101,7 @@ function SignIn() {
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </div>
                         <p className="text-center mt-2">
-                            Forgot <Link to="/forgotpassword.js">password?</Link>
+                            Forgot <Link to="/Forgotpassword">password?</Link>
                         </p>
                     </div>
                 </form>
