@@ -2,10 +2,12 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import "/checkoutfirst.css";
+import Cart from "./Cart";
 
 
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import Cart from "./Cart";
 
 export default function SignUp() {
 
@@ -171,7 +173,9 @@ export default function SignUp() {
             </form>
             </div>
             <div className="payment"><p>mark</p></div>
-            <div className="checkout-details"><p>mark</p></div>
+            <div className="checkout-details">
+              <Cart />
+              </div>
             
         </div>
   )
