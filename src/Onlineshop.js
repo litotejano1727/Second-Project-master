@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Header from "./common/header/Header";
 import Pages from "./pages/Pages";
 import Data from "./components/Data";
@@ -8,11 +8,11 @@ import Footer from "./common/footer/Footer";
 import Sdata from "./components/shops/Sdata";
 import axios from "axios";
 import Details from "./components/productpage/Details";
-import { Breadcrumb } from "react-bootstrap";
 import "./App.css";
 import ProductList from "./Product";
 import SignUp from "./pages/signinandlogin/SignUp";
 import SignIn from "./pages/signinandlogin/SignIn";
+import Processors from "./pages/Processors/Processors";
 
 function Onlineshop() {
     // API testing from here
@@ -93,6 +93,8 @@ function Onlineshop() {
 
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/signin" element={<SignIn />} />
+                <Route path="/Processors" element={<Processors />} />
+                
             </Routes>
             <Footer />
         </>
