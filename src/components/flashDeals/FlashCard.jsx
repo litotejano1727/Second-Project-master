@@ -82,7 +82,6 @@ const FlashCard = ({ addToCart }) => {
 
     }
     
-    
     return (
       <>
       <Slider {...settings}>

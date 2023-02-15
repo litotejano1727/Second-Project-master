@@ -3,7 +3,6 @@ import axios from "axios";
 
 const ShopCart = ({ addToCart }) => {
   const [items, setItems] = useState([]);
-  const [count, setCount] = useState(0)
 
   useEffect(() => {
     axios.get("http://localhost:9000/laptop")
@@ -13,10 +12,9 @@ const ShopCart = ({ addToCart }) => {
       .catch(err => console.log(err));
   }, []);
 
-
   const increment = () => {
-    setCount(count + 1)
-  }
+    // increment code here
+  };
 
   return (
     <>
@@ -27,7 +25,7 @@ const ShopCart = ({ addToCart }) => {
               <span className="discount">{item.discount}% Off</span>
               <img src={item.image} alt={item.name} className="laptop" />
               <div className="product-like">
-                <label>{count}</label> <br />
+                <label>{item.count}</label> <br />
                 <i className="fa-regular fa-heart" onClick={increment}></i>
               </div>
             </div>
@@ -41,7 +39,7 @@ const ShopCart = ({ addToCart }) => {
                 <i className="fa fa-star"></i>
               </div>
               <div className="price">
-                <h4>₱{item.price.toLocaleString()}.00 </h4>
+                <h4>₱{item.price}.00 </h4>
                 <button onClick={() => addToCart(item)}>
                   <i className="fa fa-plus"></i>
                 </button>

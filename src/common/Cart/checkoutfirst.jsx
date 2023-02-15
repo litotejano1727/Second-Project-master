@@ -2,11 +2,14 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import "/checkoutfirst.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import Cart from "./Cart";
 
+
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import Cart from "./Cart";
 
 export default function SignUp() {
-
 
 
     const formik = useFormik({
@@ -169,59 +172,10 @@ export default function SignUp() {
 
             </form>
             </div>
-            <div className="payment">
-                <form className="Auth-form">
-<div className="box">
-Place Order Now
-</div>
-<div>
-<h4 className="method">Select Payment Method</h4>
-</div>
-<br/>
-<div className="payment-holder">
-<div className="cash-delivery">
-   <h5>Cash In Delivery</h5>
-<div className="d-flex align-items-end">   
-    <p className="text">Pay when you receive</p>
-    <input type="radio" name="check"/>
-</div>
-    </div>
-<br/>
-<div className="gcash">
-    <h5>Gcash e-Wallet</h5>
-    </div>
-<div className="gcashTwo">GCASH e-WALLET</div>
-</div>
-<br/>
-<div>
-<h4 className="method">Voucher</h4>
-</div>
-<input
-                            id="Voucher"
-                            name="Voucher"
-                            type="text"
-                            placeholder="Enter Voucher Code"
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            value={formik.values.barangay}
-                            className="form-control mt-1"
-                        />
-                        <div className="d-grid gap-2 mt-3" >
-                        <button type="submit" className="btn btn-primary">APPLY</button>
-                    </div>
-                    <div>
-<h5 className="method">Invoice and Contact Info  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">Edit</a></h5>
-</div>
-<div>
-<h5 className="method">Order Summary</h5>
-<h6>Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; php 5000.00</h6>
-</div>
-<div className="d-grid gap-2 mt-3" >
-                        <button type="submit" className="btn btn-primary">PLACE ORDER NOW</button>
-                    </div>
-                </form>
-                </div>
-            <div className="checkout-details"><p>PLACE ORDER NOW</p></div>
+            <div className="payment"><p>mark</p></div>
+            <div className="checkout-details">
+              <Cart />
+              </div>
             
         </div>
   )
