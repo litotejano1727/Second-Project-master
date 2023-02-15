@@ -52,3 +52,55 @@ background-color: pink;
 color: white;
 }
 
+.box{
+  text-align: center;
+  background-color: lightgray;
+  color: white;
+padding: 2%;
+}
+
+.method{
+  padding: 4%;
+}
+
+.cash-delivery{
+  border: 1px solid lightgray;
+padding: 5%;
+border-bottom: 5%;
+cursor: pointer;
+}
+
+.cash-delivery:hover{
+  border: 2px solid blue
+}
+
+.cash-delivery:active{
+  border: blue;
+}
+
+.gcash{
+  border: 1px solid lightgray;
+padding: 5%;
+border-bottom: 5%;
+
+}
+.gcash:hover{
+  border: 2px solid blue;
+
+}
+
+.gcashTwo{
+  border: 1px solid lightgray;
+  border-top: none;
+  padding: 1%;
+}
+
+.text{
+  vertical-align: bottom;
+  padding: 0%;
+}
+
+input:hover{
+border: 1px solid blue;
+}
+

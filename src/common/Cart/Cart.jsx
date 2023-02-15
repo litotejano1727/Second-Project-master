@@ -1,6 +1,8 @@
 import React from "react"
 import "./style.css"
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+export {totalPrice} from "./Cart";
+
 
 const Cart = ({ CartItem, addToCart, decreaseQty }) => {
   const totalPrice = CartItem.reduce((price, item) => price + item.qty * item.price, 0)
