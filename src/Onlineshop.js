@@ -88,7 +88,6 @@ function Onlineshop() {
                         />
                     }
                 />
-                {/* <Route path="/" element={<App />} /> */}
                 <Route path="/productlist" element={<ProductList />} />
 
                 <Route path="/signup" element={<SignUp />} />
