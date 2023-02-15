@@ -95,7 +95,7 @@ const FlashCard = ({ addToCart }) => {
                   <div className='product-like'>
                     <label>{count}</label>
                     <i className='fa fa-heart' onClick={increment} />
-              </div>
+                  </div>
             </div>
             <div className='text'>
               <p className='title'>{productItems.name}</p>
@@ -105,7 +105,7 @@ const FlashCard = ({ addToCart }) => {
                     <i className='fa fa-star'></i>
                     <i className='fa fa-star'></i>
                     <i className='fa fa-star'></i>
-                  </div>
+              </div>
               <p className='price'>
                 <h4>
                   <span className='price-original'>

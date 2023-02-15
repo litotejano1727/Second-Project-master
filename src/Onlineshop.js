@@ -12,7 +12,7 @@ import "./App.css";
 import ProductList from "./Product";
 import SignUp from "./pages/signinandlogin/SignUp";
 import SignIn from "./pages/signinandlogin/SignIn";
-import Processors from "./pages/Processors/Processors";
+import Processors from "./pages/ProductPage/Processors";
 
 function Onlineshop() {
     // API testing from here
@@ -93,7 +93,7 @@ function Onlineshop() {
 
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/signin" element={<SignIn />} />
-                <Route path="/Processors" element={<Processors />} />
+                <Route path="/pages" element={<Processors />} />
                 
             </Routes>
             <Footer />

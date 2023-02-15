@@ -1,0 +1,11 @@
+.btn-price{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.btn-price button{
+    margin-left: 20px;
+}
+.rate{
+    cursor: pointer;
+}
