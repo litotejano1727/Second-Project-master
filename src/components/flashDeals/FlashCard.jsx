@@ -107,16 +107,18 @@ const FlashCard = ({ addToCart }) => {
                     <i className='fa fa-star'></i>
                   </div>
               <p className='price'>
-                P {productItems.price.toLocaleString()}.00
-                <span className='price-original'>
-                  {productItems.priceOriginal}
-                </span>
+                <h4>
+                  <span className='price-original'>
+                  ₱{productItems.priceOriginal}
+                  </span>
+                 {productItems.price.toLocaleString()}.00  
+                </h4>
+                <button onClick={() => addToCart(productItems)}>
+                  <i className='fa fa-plus'></i>
+                </button>
               </p>
             </div>
             <div className='add-to-cart'>
-              <button onClick={() => addToCart(productItems)}>
-                Add to Cart
-              </button>
             </div>
           </div>
         </div>
