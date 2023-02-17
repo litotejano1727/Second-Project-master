@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -6,53 +7,55 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import './productframe.css'
 
-function ProductFrame() {
+function ProductFrame(addToCart) {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:9000/laptop")
+      .then(res => {
+        setItems(res.data);
+      })
+      .catch(err => console.log(err));
+  }, []);
+
+  const increment = () => {
+    // increment code here
+  };
+
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="240"
-          image="https://cdn.shopify.com/s/files/1/0101/4864/2879/products/160-a_540x.jpg?v=1635836886"
-          alt="green iguana"
-          className='cardImg'
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Seagate Barracuda
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-          Brand: Seagate
-          Specifications: 1 TB
-          Standard Model Number: ST1000DM010
-          Bytes per Sector: 4,096
-          Performance
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-        <Typography >
-          <div className='text'>
-            <p className='title'>productItemsName</p>
-            <div className='rate'>
-                  <i className='fa fa-star'></i>
-                  <i className='fa fa-star'></i>
-                  <i className='fa fa-star'></i>
-                  <i className='fa fa-star'></i>
-                  <i className='fa fa-star'></i>
+    <>
+      {items.map((item) => (
+        <div key={item.id} className="box">
+          <div className="product mtop">
+            <div className="img">
+              <span className="discount">-{item.discount} Off</span>
+              <img src={item.image} alt={item.name} className="productImg" />
+              <div className="product-like">
+                <label>{item.count}</label> <br />
+                <i className="fa-regular fa-heart" onClick={increment}></i>
+              </div>
             </div>
-            <p className='price btn-price'>
-              <h4>
-                <span className='price-original'>
-                ₱500000.00
-                </span>
-              </h4>
-              <button >
-                <i className='fa fa-plus'></i>
-              </button>
-            </p>
+            <div className="product-details">
+              <h3>{item.name}</h3>
+              <div className="rate">
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
+              </div>
+              <div className="price">
+                <h4>₱{item.price}.00 </h4>
+                <button onClick={() => addToCart(item)}>
+                  <i className="fa fa-plus"></i>
+                </button>
+              </div>
+            </div>
           </div>
-        </Typography>
-    </Card>
+        </div>
+      ))}
+    </>
   )
 }
 
