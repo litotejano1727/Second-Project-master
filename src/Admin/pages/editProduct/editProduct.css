@@ -1,5 +1,7 @@
-.newProduct {
+.addProduct{
     flex: 7;
+}
+.newProduct {
     padding: 20px;
     width: calc(100vh - 55px);
 }
@@ -37,4 +39,8 @@ form {
     color: white;
     font-weight: 600;
     cursor: pointer;
+}
+.addProductButton:hover{
+    background-color: var(--secondary-dark-color);
+    color: var(--primary-color);
 }

@@ -174,7 +174,7 @@ const EditProduct = () => {
             onChange={(event) => setDiscount(event.target.value)}
             />
             </div>
-            <button type="submit">Save Changes</button>
+            <button type="submit" className="addProductButton">Save Changes</button>
             </form>
             </div>
             );
