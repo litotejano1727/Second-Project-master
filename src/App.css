@@ -144,8 +144,8 @@ button {
     border-radius: 8px;
 }
 .laptop {
-    height: 283px !important;
-    width: 283px !important;
+    height: 100%;
+    width: 100%;
     object-fit: contain;
 }
 /*---------product-----------*/
@@ -256,6 +256,12 @@ button {
     color: grey;
 }
 /*----- heading -------*/
+.processors{
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-flow: row dense;
+}
 .grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -263,6 +269,36 @@ button {
 }
 .grid2 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 10px;
 }
+@media screen and (max-width: 1000px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+  }
+@media screen and (max-width: 780px) {
+    .right .slider-product{
+        display: none;
+    }
+  }
+@media screen and (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .homeSlide, .cart, .search-box span, .icon i{
+        display: none;
+    }
+    .heading-left h2{
+        font-size: 15px;
+        margin: 0;
+    }
+  }
+@media screen and (max-width: 450px) {
+    .grid {
+        display: none;
+    }
+    
+  }
+@media screen and (max-width: 375px) {
+  }
