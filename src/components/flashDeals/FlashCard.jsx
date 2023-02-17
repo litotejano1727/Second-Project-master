@@ -96,7 +96,7 @@ const FlashCard = ({ addToCart }) => {
                   </div>
             </div>
             <div className='text'>
-              <p className='title'>{productItems.name}</p>
+              <p className='title'><h4>{productItems.name}</h4></p>
               <div className='rate'>
                     <i className='fa fa-star'></i>
                     <i className='fa fa-star'></i>
@@ -105,12 +105,15 @@ const FlashCard = ({ addToCart }) => {
                     <i className='fa fa-star'></i>
               </div>
               <p className='price'>
-                <h4>
+               
                   <span className='price-original'>
+                  <h4>
                   ₱{productItems.priceOriginal}
+                  {productItems.price.toLocaleString()}.00  
+                  </h4>
                   </span>
-                 {productItems.price.toLocaleString()}.00  
-                </h4>
+                 
+                
                 <button onClick={() => addToCart(productItems)}>
                   <i className='fa fa-plus'></i>
                 </button>
