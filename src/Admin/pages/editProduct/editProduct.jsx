@@ -91,7 +91,7 @@ const EditProduct = () => {
           <input
             type="text"
             id="id"
-            key="idInput"
+            key="id"
             value={id}
             disabled
           />
@@ -101,6 +101,7 @@ const EditProduct = () => {
           <input
             type="text"
             id="Name"
+            placeholder={name}
             value={name}
             onChange={(event) => setName(event.target.value)}
           />
