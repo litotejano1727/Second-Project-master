@@ -45,7 +45,6 @@ const FlashCard = ({ addToCart }) => {
   }
 
   const settings = {
-    dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 4,
@@ -60,7 +59,6 @@ const FlashCard = ({ addToCart }) => {
             slidesToShow: 3,
             slidesToScroll: 3,
             infinite: true,
-            dots: true
           }
         },
         {
