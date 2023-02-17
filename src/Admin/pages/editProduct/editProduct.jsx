@@ -21,7 +21,7 @@ const EditProduct = () => {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}`)
+      .get(`${API_URL}admin/product/${id}`)
       .then((res) => {
         setName(res.data.name);
         setPrice(res.data.price);
@@ -56,7 +56,7 @@ const EditProduct = () => {
     }
   
     axios
-      .put(`${API_URL}/admin/product/${id}/`, {
+      .put(`${API_URL}admin/product/${id}/`, {
         name,
         price,
         category,
@@ -92,7 +92,7 @@ const EditProduct = () => {
             type="text"
             id="id"
             key="id"
-            value={id}
+            defaultValue={id}
             disabled
           />
         </div>
@@ -102,7 +102,7 @@ const EditProduct = () => {
             type="text"
             id="Name"
             placeholder={name}
-            value={name}
+            defaultValue={name}
             onChange={(event) => setName(event.target.value)}
           />
         </div>
@@ -111,7 +111,8 @@ const EditProduct = () => {
           <input
             type="number"
             id="Price"
-            value={price}
+            placeholder={price}
+            defaultValue={price}
             onChange={(event) => setPrice(event.target.value)}
           />
         </div>
@@ -120,7 +121,8 @@ const EditProduct = () => {
           <input
             type="text"
             id="Category"
-            value={category}
+            placeholder={category}
+            defaultValue={category}
             onChange={(event) => setCategory(event.target.value)}
           />
         </div>
@@ -129,7 +131,8 @@ const EditProduct = () => {
           <input
             type="text"
             id="Image"
-            value={image}
+            placeholder={image}
+            defaultValue={image}
             onChange={(event) => setImage(event.target.value)}
           />
         </div>
@@ -138,7 +141,8 @@ const EditProduct = () => {
             <input
             type="text"
             id="Image2"
-            value={image2}
+            placeholder={image2}
+            defaultValue={image2}
             onChange={(event) => setImage2(event.target.value)}
             />
             </div>
@@ -147,7 +151,8 @@ const EditProduct = () => {
             <input
             type="text"
             id="Image3"
-            value={image3}
+            placeholder={image3}
+            defaultValue={image3}
             onChange={(event) => setImage3(event.target.value)}
             />
             </div>
@@ -155,7 +160,7 @@ const EditProduct = () => {
             <label htmlFor="Description">Description</label>
             <textarea
             id="Description"
-            value={description}
+            defaultValue={description}
             onChange={(event) => setDescription(event.target.value)}
             />
             </div>
@@ -163,7 +168,8 @@ const EditProduct = () => {
             <label htmlFor="stocks">Stocks</label>
             <textarea
             id="Stocks"
-            value={stocks}
+            placeholder={stocks}
+            defaultValue={stocks}
             onChange={(event) => setStocks(event.target.value)}
             />
             </div>
@@ -171,7 +177,8 @@ const EditProduct = () => {
             <label htmlFor="Discount">Discount</label>
             <textarea
             id="Discount"
-            value={discount}
+            placeholder={discount}
+            defaultValue={discount}
             onChange={(event) => setDiscount(event.target.value)}
             />
             </div>

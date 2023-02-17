@@ -1,12 +1,12 @@
 const Ddata = [
     {
         cover: "./images/discount/discount-1.png",
-        name: "BenuX 2022",
+        name: "BenuX ",
         price: "₱999",
     },
     {
         cover: "./images/discount/discount-2.png",
-        name: "Sony TV 1080p",
+        name: "Sony TV",
         price: "₱999",
     },
     {
@@ -16,7 +16,7 @@ const Ddata = [
     },
     {
         cover: "./images/discount/discount-4.png",
-        name: "Setgearr 2022",
+        name: "Setgearr",
         price: "₱999",
     },
     {
@@ -26,7 +26,7 @@ const Ddata = [
     },
     {
         cover: "./images/discount/discount-6.png",
-        name: "RG products",
+        name: "RG",
         price: "₱999",
     },
     {
