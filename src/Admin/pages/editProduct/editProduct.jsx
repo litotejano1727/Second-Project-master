@@ -1,9 +1,10 @@
-import "./editProduct.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import "./editProduct.css";
 
-const API_URL = `http://localhost:9000/editproduct`;
+const API_URL = "http://localhost:9000/";
+
 const EditProduct = () => {
   const { id } = useParams();
 
@@ -20,13 +21,17 @@ const EditProduct = () => {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/${id}`)
+      .get(`${API_URL}`)
       .then((res) => {
         setName(res.data.name);
         setPrice(res.data.price);
         setCategory(res.data.category);
         setImage(res.data.image);
+        setImage2(res.data.image2);
+        setImage3(res.data.image3);
         setDescription(res.data.description);
+        setStocks(res.data.stocks);
+        setDiscount(res.data.discount);
       })
       .catch((err) => {
         setError(err);
@@ -47,12 +52,11 @@ const EditProduct = () => {
       !stocks ||
       !discount
     ) {
-
       return alert("All fields are required.");
     }
-
+  
     axios
-      .put(`${API_URL}/${id}`, {
+      .put(`${API_URL}/admin/product/${id}/`, {
         name,
         price,
         category,
@@ -60,6 +64,8 @@ const EditProduct = () => {
         image2,
         image3,
         description,
+        stocks,
+        discount,
       })
       .then((res) => {
         console.log(res.data);
@@ -71,16 +77,26 @@ const EditProduct = () => {
         alert("Something went wrong. Please try again later.");
       });
   };
-
+  
   if (error) {
     return <div>An error occurred: {error.message}</div>;
   }
 
   return (
-    <div className="editProduct">
-      <h1 className="editProductTitle">Edit Product</h1>
-      <form className="editProductForm" onSubmit={handleSubmit}>
-        <div className="editProductItem">
+    <div className="addProduct">
+      <h1 className="addProductTitle">Edit Product</h1>
+      <form className="addProductForm" onSubmit={handleSubmit}>
+        <div className="addProductItem">
+          <label htmlFor="id">ID</label>
+          <input
+            type="text"
+            id="id"
+            key="idInput"
+            value={id}
+            disabled
+          />
+        </div>
+        <div className="addProductItem">
           <label htmlFor="Name">Name</label>
           <input
             type="text"
@@ -89,35 +105,35 @@ const EditProduct = () => {
             onChange={(event) => setName(event.target.value)}
           />
         </div>
-        <div className="editProductItem">
+        <div className="addProductItem">
           <label htmlFor="Price">Price</label>
           <input
             type="number"
             id="Price"
             value={price}
             onChange={(event) => setPrice(event.target.value)}
-            />
-            </div>
-            <div className="editProductItem">
-            <label htmlFor="Category">Category</label>
-            <input
+          />
+        </div>
+        <div className="addProductItem">
+          <label htmlFor="Category">Category</label>
+          <input
             type="text"
             id="Category"
             value={category}
             onChange={(event) => setCategory(event.target.value)}
-            />
-            </div>
-            <div className="editProductItem">
-            <label htmlFor="Image">Image</label>
-            <input
+          />
+        </div>
+        <div className="addProductItem">
+          <label htmlFor="Image">Image</label>
+          <input
             type="text"
             id="Image"
             value={image}
             onChange={(event) => setImage(event.target.value)}
-            />
-            </div>
-            <div className="editProductItem">
-            <label htmlFor="Image2">Image</label>
+          />
+        </div>
+        <div className="addProductItem">
+          <label htmlFor="Image2">Image</label>
             <input
             type="text"
             id="Image2"
@@ -125,7 +141,7 @@ const EditProduct = () => {
             onChange={(event) => setImage2(event.target.value)}
             />
             </div>
-            <div className="editProductItem">
+            <div className="addProductItem">
             <label htmlFor="Image3">Image</label>
             <input
             type="text"
@@ -134,7 +150,7 @@ const EditProduct = () => {
             onChange={(event) => setImage3(event.target.value)}
             />
             </div>
-            <div className="editProductItem">
+            <div className="addProductItem">
             <label htmlFor="Description">Description</label>
             <textarea
             id="Description"
@@ -142,7 +158,7 @@ const EditProduct = () => {
             onChange={(event) => setDescription(event.target.value)}
             />
             </div>
-            <div className="editProductItem">
+            <div className="addProductItem">
             <label htmlFor="stocks">Stocks</label>
             <textarea
             id="Stocks"
@@ -150,7 +166,7 @@ const EditProduct = () => {
             onChange={(event) => setStocks(event.target.value)}
             />
             </div>
-            <div className="editProductItem">
+            <div className="addProductItem">
             <label htmlFor="Discount">Discount</label>
             <textarea
             id="Discount"

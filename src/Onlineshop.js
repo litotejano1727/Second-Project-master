@@ -9,10 +9,11 @@ import Sdata from "./components/shops/Sdata";
 import axios from "axios";
 import Details from "./components/productpage/Details";
 import "./App.css";
-import ProductList from "./Product";
+
 import SignUp from "./pages/signinandlogin/SignUp";
 import SignIn from "./pages/signinandlogin/SignIn";
 import Processors from "./pages/ProductPage/Processors";
+import Product from "./Admin/pages/product/Product";
 
 function Onlineshop() {
     // API testing from here
@@ -77,7 +78,7 @@ function Onlineshop() {
                     }
                 />
 
-                <Route path="/details" element={<Details />} />
+                <Route path="/product" element={<Product />} />
                 <Route
                     path="/cart"
                     element={
@@ -89,12 +90,10 @@ function Onlineshop() {
                     }
                 />
                 {/* <Route path="/" element={<App />} /> */}
-                <Route path="/productlist" element={<ProductList />} />
 
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/pages" element={<Processors />} />
-                
             </Routes>
             <Footer />
         </>
