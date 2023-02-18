@@ -1,19 +1,20 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import ProductFrame from "../../pages/ProductPage/ProductFrame"
 
 const Categories = () => {
   const data = [
     {
       cateImg: "./images/category/cat1.png",
-      cateName: "Processors",
+      cateName: "Processor",
     },
     {
       cateImg: "./images/category/cat2.png",
-      cateName: "Graphic Cards",
+      cateName: "Graphics Card",
     },
     {
       cateImg: "./images/category/cat3.png",
-      cateName: "Motherboards",
+      cateName: "Motherboard",
     },
     {
       cateImg: "./images/category/cat4.png",
@@ -33,7 +34,7 @@ const Categories = () => {
     },
     {
       cateImg: "./images/category/cat8.png",
-      cateName: "Laptops",
+      cateName: "Laptop",
     },
     {
       cateImg: "./images/category/cat9.png",
@@ -54,12 +55,13 @@ const Categories = () => {
       <div className='category'>
         {data.map((value, index) => {
           return (
-            <Link to={value.cateName}>
-              <div className='box f_flex' key={index}>
-                <img src={value.cateImg} alt='' />
-                <span className="cateName">{value.cateName}</span>
-              </div>
-            </Link>
+<Link to={`/categories/frame?category=${value.cateName}`}>
+  <div className='box f_flex' key={index}>
+    <img src={value.cateImg} alt='' />
+    <span className="cateName">{value.cateName}</span>
+  </div>
+</Link>
+
           )
         })}
       </div>

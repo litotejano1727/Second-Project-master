@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -14,6 +15,7 @@ function ProductFrame({ addToCart }) {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(18);
     const [selectedCategory, setSelectedCategory] = useState("");
+    const location = useLocation();
     const [categories, setCategories] = useState([]); // added state for categories
     useEffect(() => {
         axios
@@ -27,6 +29,13 @@ function ProductFrame({ addToCart }) {
             })
             .catch((err) => console.log(err));
     }, []);
+    useEffect(() => {
+        const searchParams = new URLSearchParams(location.search);
+        const category = searchParams.get("category");
+        if (category) {
+            setSelectedCategory(category);
+        }
+    }, [location.search]);
     const increment = () => {
         setCount(count + 1);
     };

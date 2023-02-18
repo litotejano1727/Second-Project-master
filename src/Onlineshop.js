@@ -92,7 +92,7 @@ function Onlineshop() {
 
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/signin" element={<SignIn />} />
-                <Route path="/categories" element={<ProductPage />} />
+                <Route path="/categories/frame" element={<ProductPage />} />
                 <Route path="/details/:id" element={<Details />} />
             </Routes>
             <Footer />
