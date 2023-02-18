@@ -214,6 +214,12 @@ button {
     border-radius: 8px;
     background-color: rgb(234, 236, 236);
 }
+.title {
+    height: 10px;
+    color: black !important;
+    text-decoration: none !important;
+}
+
 /*---------product-----------*/
 /*----- control btn -------*/
 .control-btn .next,

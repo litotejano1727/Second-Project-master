@@ -19,7 +19,7 @@ const Details = (props) => {
     useEffect(() => {
         if (id) {
             axios
-                .get(`http://localhost:9000/${id}`)
+                .get(`http://localhost:9000/details/${id}`)
                 .then((response) => {
                     setProductItems(response.data);
                 })
