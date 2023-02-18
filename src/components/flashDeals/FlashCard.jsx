@@ -98,7 +98,8 @@ const FlashCard = ({ addToCart }) => {
                   </div>
             </div>
             <div className='text'>
-              <p className='title'><h4>{productItems.name}</h4></p>
+            <h4>
+              <p className='title'><Link to={`/details/${productItems.id}`}>{productItems.name}</Link></p></h4>
               <div className='rate'>
                     <i className='fa fa-star'></i>
                     <i className='fa fa-star'></i>

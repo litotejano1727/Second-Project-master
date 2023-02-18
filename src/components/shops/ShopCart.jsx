@@ -3,6 +3,7 @@ import axios from "axios";
 
 const ShopCart = ({ addToCart }) => {
   const [items, setItems] = useState([]);
+  const [count, setCount] = useState(0)
 
   useEffect(() => {
     axios.get("http://localhost:9000/laptop")
@@ -13,8 +14,8 @@ const ShopCart = ({ addToCart }) => {
   }, []);
 
   const increment = () => {
-    // increment code here
-  };
+    setCount(count + 1)
+  }
 
   return (
     <>

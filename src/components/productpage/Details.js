@@ -2,88 +2,34 @@ import React, { useState, useEffect, useRef } from "react";
 import "../productpage/Details.css";
 import SoldIcon from "../productpage/images/sold.png";
 import axios from "axios";
-const product = {
-    // Product Data
-    id: 1,
-    name: "new macbook laptop",
-    slug: "new-luxury-laptop",
-    photo: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    price: 1999,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque consectetur vero asperiores quis animi explicabo accusamus nemo cupiditate harum pariatur! Provident sit tenetur totam mollitia consectetur nesciunt, recusandae obcaecati itaque!",
-    images: [
-        {
-            src: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-            src: "https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-            src: "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-            src: "https://images.pexels.com/photos/812264/pexels-photo-812264.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-            src: "https://images.pexels.com/photos/1006293/pexels-photo-1006293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-            src: "https://images.pexels.com/photos/209151/pexels-photo-209151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-            src: "https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-            src: "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-            src: "https://images.pexels.com/photos/812264/pexels-photo-812264.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-            src: "https://images.pexels.com/photos/1006293/pexels-photo-1006293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-            src: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-            src: "https://images.pexels.com/photos/209151/pexels-photo-209151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-    ],
-    colors: ["#2287fa", "#f71b1b", "green"],
-    infos: [
-        {
-            title: "highlights",
-            content:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis magni illum, sint explicabo esse temporibus! Dicta, voluptatum dolorem numquam deserunt, doloribus, voluptatem consequuntur praesentium deleniti nulla in repellendus eum vero.",
-        },
-        {
-            title: "materials",
-            content: "materials",
-        },
-        {
-            title: "how to use",
-            content: "how to use",
-        },
-        {
-            title: "pro tips",
-            content: "pro tips",
-        },
-    ],
-    discount: 20,
-    sold: 52,
-    category: "laptop",
-    brand: "apple",
-};
 
-const Details = () => {
+const Details = (props) => {
+    const [productItems, setProductItems] = useState([]);
     const [slideIndex, setSlideIndex] = useState(1);
     const [width, setWidth] = useState(0);
     const [start, setStart] = useState(0);
     const [change, setChange] = useState(9);
 
-    const [selectedColor, setSelectedColor] = useState(product.colors[0]);
-    const [infoTitle, setInfoTitle] = useState(product.infos[0].title);
+    const [selectedColor, setSelectedColor] = useState("");
+    const [infoTitle, setInfoTitle] = useState("");
 
     const slideRef = useRef();
+    const id = props.match && props.match.params ? props.match.params.id : null;
+
+    useEffect(() => {
+        if (id) {
+            axios
+                .get(`http://localhost:9000/${id}`)
+                .then((response) => {
+                    setProductItems(response.data);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }
+    }, [id]);
+
+    const product = productItems[0] || {};
 
     useEffect(() => {
         if (!slideRef.current) return;
@@ -91,51 +37,53 @@ const Details = () => {
         const childrenElementCount = slideRef.current.childElementCount;
         const width = scrollWidth / childrenElementCount;
         setWidth(width);
-    }, []);
+    }, [slideIndex]);
+
+    useEffect(() => {
+        if (!slideRef.current || !width) return;
+        let numOfThumb = Math.round(slideRef.current.offsetWidth / width);
+        slideRef.current.scrollLeft =
+            slideIndex > numOfThumb ? (slideIndex - 1) * width : 0;
+    }, [width, slideIndex]);
 
     function plusSlides(n) {
         setSlideIndex((prev) => prev + n);
         slideShow(slideIndex + n);
     }
+
     function slideShow(n) {
-        if (n > product.images.length) {
+        if (n > product.image?.length) {
             setSlideIndex(1);
-        }
-        if (n < 1) {
-            setSlideIndex(product.images.length);
+        } else if (n < 1) {
+            setSlideIndex(product.image?.length);
         }
     }
+
     function dragStart(e) {
         setStart(e.clientX);
     }
+
     function dragOver(e) {
         let touch = e.clientX;
         setChange(start - touch);
     }
+
     function dragEnd(e) {
-        if (change > 0) {
-            slideRef.current.scrollLeft += width;
-        } else {
-            slideRef.current.scrollLeft -= width;
+        if (Math.abs(change) > 0) {
+            if (change > 0) {
+                slideRef.current.scrollLeft += width;
+            } else {
+                slideRef.current.scrollLeft -= width;
+            }
         }
     }
-    useEffect(
-        () => {
-            if (!slideRef.current || !width) return;
-            let numOfThumb = Math.round(slideRef.current.offsetWidth / width);
-            slideRef.current.scrollLeft =
-                slideIndex > numOfThumb ? (slideIndex - 1) * width : 0;
-        },
-        [width],
-        slideIndex
-    );
 
     return (
         <React.Fragment>
             <section className="prod-details">
                 <div className="prod-page-img">
                     <div className="big-images">
-                        {product.images.map((image, index) => (
+                        {product.image?.map((image, index) => (
                             <div
                                 key={index}
                                 className="mySlides"
@@ -146,121 +94,59 @@ const Details = () => {
                                             : "none",
                                 }}
                             >
-                                <div className="numbertext">
-                                    {index + 1} / {product.images.length}
-                                </div>
-                                <img src={image.src} alt="" />
-                            </div>
-                        ))}
-                        <a
-                            href="#!"
-                            className="prev"
-                            onClick={() => plusSlides(-1)}
-                        >
-                            &#10094;
-                        </a>
-                        <a
-                            href="#!"
-                            className="next"
-                            onClick={() => plusSlides(1)}
-                        >
-                            &#10095;
-                        </a>
-                    </div>
-
-                    <div
-                        className="slider-img"
-                        draggable={true}
-                        ref={slideRef}
-                        onDragStart={dragStart}
-                        onDragOver={dragOver}
-                        onDragEnd={dragEnd}
-                    >
-                        {product.images.map((image, index) => (
-                            <div
-                                key={index}
-                                className={`slider-box ${
-                                    index + 1 === slideIndex ? "active" : ""
-                                }`}
-                                onClick={() => setSlideIndex(index + 1)}
-                            >
-                                <img src={image.src} alt="" />
+                                <img src={image} alt={`Product ${index + 1}`} />
                             </div>
                         ))}
                     </div>
-                </div>
-                <div className="prod-page-details">
-                    <strong>{product.name}</strong>
-                    <p className="prod-category">
-                        {product.brand} - {product.category}
-                    </p>
-                    <p className="prod-price">
-                        $
-                        {Math.round(
-                            product.price -
-                                (product.price * product.discount) / 100
-                        )}{" "}
-                        <del>${product.price}</del>
-                    </p>
-                    <p className="small-desc">{product.desc}</p>
-                    <div className="prod-options">
-                        <span>Colors</span>
-                        {product.colors.map((color) => (
-                            <div key={color}>
-                                <button
-                                    style={{ background: color }}
-                                    className={
-                                        color === selectedColor ? "active" : ""
-                                    }
-                                    onClick={() => setSelectedColor(color)}
+                    <div className="small-images" ref={slideRef}>
+                        {product.image?.map((image, index) => (
+                            <div key={index} className="thumb">
+                                <img
+                                    src={image}
+                                    alt={`Product ${index + 1}`}
+                                    onClick={() => setSlideIndex(index + 1)}
+                                    onTouchEnd={() => setSlideIndex(index + 1)}
                                 />
                             </div>
                         ))}
                     </div>
-                    <div className="prod-page-offer">
-                        <i className="fa-solid fa-tag" /> {product.discount} %
-                        Discount
-                    </div>
-                    <div className="prod-sold">
-                        <img src={SoldIcon} alt="SoldIcon" />
-                        <strong>
-                            {product.sold} <span> Products Sold</span>
-                        </strong>
-                    </div>
-                    <div className="cart-btns">
-                        <a href="#!" className="add-cart">
-                            Add to Cart
-                        </a>
-                        <a href="#!" className="add-cart buy-now">
-                            Buy Now
-                        </a>
-                    </div>
+                    {product.sold && (
+                        <div className="sold-out">
+                            <img src={SoldIcon} alt="Sold Out" />
+                        </div>
+                    )}
                 </div>
-            </section>
-            <section className="prod-all-info">
-                <ul className="prod-info-menu">
-                    {product.infos.map((info) => (
-                        <li
-                            key={info.title}
-                            onClick={() => setInfoTitle(info.title)}
-                            className={`p-info-list ${
-                                info.title === infoTitle ? "active" : ""
-                            }`}
-                        >
-                            {info.title}
-                        </li>
-                    ))}
-                </ul>
-                {product.infos.map((info) => (
-                    <div
-                        key={info.title}
-                        className={`info-container ${
-                            info.title === infoTitle ? "active" : ""
-                        }`}
-                    >
-                        {info.content}
-                    </div>
-                ))}
+                <div className="prod-page-info">
+                    <h1>{product.name}</h1>
+                    {/* <div className="prod-page-colors">
+                        <p>Available colors:</p> */}
+                    {/* {product.colors?.map((color, index) => (
+                            <span
+                                key={index}
+                                className={
+                                    selectedColor === color ? "selected" : ""
+                                }
+                                style={{ backgroundColor: color }}
+                                onClick={() => setSelectedColor(color)}
+                            ></span>
+                        ))} */}
+                </div>
+                <div className="prod-page-price">
+                    <h2>${product.price}</h2>
+                    {/* {product.salePrice && <span>${product.salePrice}</span>} */}
+                </div>
+                <p>{infoTitle}</p>
+                <div className="prod-page-info-text">{product.description}</div>
+                <div
+                    className="prod-page-info-text"
+                    draggable="true"
+                    onDragStart={dragStart}
+                    onDragOver={dragOver}
+                    onDragEnd={dragEnd}
+                >
+                    {product.description}
+                </div>
+                {/* </div> */}
             </section>
         </React.Fragment>
     );
