@@ -1,10 +1,40 @@
 /*------head-----------*/
+
+@media screen and (max-width: 450px) {
+.head{
+    min-height: 90px;
+display: flex;
+width: 100%;
+max-width: 2000px;
+margin: 0 auto;
+}
+    
+}
+
+@media screen and (max-width: 390px) {
+.head{
+display: flex;
+
+}
+}
+
+@media screen and (max-width: 360px) {
+    .head{
+    display: flex;
+    width: 100% auto;
+    }
+    }
+
+
 .head {
     background-color: #0f3460;
     padding: 10px 0;
     color: #fff !important;
     height: 45px;
+display: flex;
+    
 }
+
 .head i {
     margin-right: 10px;
 }
@@ -46,6 +76,7 @@
     }
     .head {
         padding: 10px 0px;
+        
     }
 }
 /*------head-----------*/
@@ -211,3 +242,8 @@ header ul li a:hover {
         height: 10vh;
     }
 }
+
+
+/*media adjustment */
+
+

@@ -1,113 +1,118 @@
 import React from "react";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import { Link } from "react-router-dom";
 import "./style.css";
+import Card from "../signinandlogin/card/card";
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {database} from "../signinandlogin/Utils/database";
+import { Link } from "react-router-dom";
 
 
-function SignIn() {
-    const formik = useFormik({
-        initialValues: {
-            email: "",
-            password: "",
-            confirmPassword: "",
-        },
-        validationSchema: Yup.object({
-            email: Yup.string()
-                .email("invalid Email Address")
-                .required("Required"),
-            password: Yup.string()
-                .matches(
-                    /^[a-zA-Z0-9]+$/,
-                    "Password can only contain letters and numbers"
-                )
-                .max(12, "must be 12 characters or less")
-                .min(6, "minimum of 6 characters")
-                .required("Required"),
-            confirmPassword: Yup.string()
-                .oneOf([Yup.ref("password"), null], "Password must match")
-                .required("Required"),
-        }),
 
-        onSubmit: (values) => {
-            fetch("/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(values),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    if (data.success) {
-                        window.location.href = "/home";
-                    } else {
-                        console.error(data.message);
-                    }
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
-        },
-    });
-  return (
-    <>
-            <div className="Auth-form-container">
-                <form onSubmit={formik.handleSubmit} className="Auth-form">
+
+const SignIn = ({ setIsSignIN }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessages, setErrorMessages] = useState({});
+
+  const errors = {
+    username: "Invalid Email",
+    password: "Invalid password",
+    noUsername: "Please enter your Email",
+    noPassword: "Please enter your password",
+  };
+
+  const handleSubmit = (e) => {
+    // Prevent page from reloading
+    e.preventDefault();
+
+    if (!username) {
+      // Username input is empty
+      setErrorMessages({ name: "noUsername", message: errors.noUsername });
+      return;
+    }
+
+    if (!password) {
+      // Password input is empty
+      setErrorMessages({ name: "noPassword", message: errors.noPassword });
+      return;
+    }
+
+    // Search for user credentials
+    const currentUser = database.find((user) => user.username === username);
+
+    if (currentUser) {
+      if (currentUser.password !== password) {
+        // Wrong password
+        setErrorMessages({ name: "password", message: errors.password });
+      } else {
+        // Correct password, log in user
+        setErrorMessages({});
+        setIsSignIN(true);
+      }
+    } else {
+      // Username doens't exist in the database
+      setErrorMessages({ name: "username", message: errors.username });
+    }
+  };
+
+  // Render error messages
+  const renderErrorMsg = (name) =>
+    name === errorMessages.name && (
+      <p className="error_msg">{errorMessages.message}</p>
+    );
+
+
+return (
+<Card>
+
+<div className="Auth-form-container">
+                <form onSubmit={handleSubmit} className="Auth-form">
                     <div className="Auth-form-content">
                         <h3 className="Auth-form-title">Sign-In</h3>
                         <div className="text-center">
                             Not registered yet?{" "}
-                            <Link className="link-primary" to="/signup">
-                                Sign-Up
-                            </Link>
+                                <Link to="/SignUp">Sign-Up</Link>
                         </div>
                         <div className="input-containerThree mt-3">
                             <label>Email address</label>
-                            <input
-                                id="email"
-                                name="email"
-                                type="text"
-                                placeholder="Email"
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-                                value={formik.values.email}
-                                className="form-control mt-1"
-                            />
-                            {formik.touched.email && formik.errors.email ? (
-                                <p>{formik.errors.email}</p>
-                            ) : null}
+                            <input type="text" placeholder="Email" className="inputOne" value={username} onChange={(e) => setUsername(e.target.value) }/>
+                            {renderErrorMsg("username")}
+{renderErrorMsg("noUsername")}
                         </div>
                         <div className="input-containerFour mt-3" >
                             <label>Password</label>
-                            <input
-                                id="password"
-                                name="password"
-                                type="password"
-                                placeholder="Password"
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-                                value={formik.values.password}
-                                className="form-control mt-1"
-                            />
-                            {formik.touched.password &&
-                            formik.errors.password ? (
-                                <p>{formik.errors.password}</p>
-                            ) : null}
+                            <input type="password" placeholder="Password" className="inputTwo" value={password} onChange={(e) => setPassword(e.target.value) }/>
+
+{renderErrorMsg("password")}
+{renderErrorMsg("noPassword")}
                         </div>
 
                         <div className="d-grid gap-2 mt-3">
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </div>
                         <p className="text-center mt-2">
-                            Forgot <Link to="/Forgotpassword">password?</Link>
+                            <Link to="/ForgotPassword">Forgot password?</Link>
                         </p>
                     </div>
                 </form>
             </div>
-        </>
-  )
-}
 
-export default SignIn
+            </Card>);
+
+
+
+
+
+
+
+
+
+
+
+
+
+};
+
+
+
+export default SignIn;
