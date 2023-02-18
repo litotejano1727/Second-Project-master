@@ -1,5 +1,4 @@
 import React from "react"
-import Catg from "./Catg"
 import ShopCart from "./ShopCart"
 import "./style.css"
 
@@ -8,7 +7,6 @@ const Shop = ({ addToCart, shopItems }) => {
     <>
       <section className='shop background'>
         <div className='container d_flex'>
-          <Catg />
           <div className='contentWidth'>
             <div className='heading d_flex'>
               <div className='heading-left row  f_flex'>
@@ -19,7 +17,7 @@ const Shop = ({ addToCart, shopItems }) => {
                 <i className='fa-solid fa-caret-right'></i>
               </div>
             </div>
-            <div className='product-content laptop-overflow grid1'>
+            <div className='product-content laptop-overflow grid2'>
               <ShopCart addToCart={addToCart} shopItems={shopItems} />
             </div>
           </div>
