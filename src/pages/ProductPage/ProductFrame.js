@@ -7,25 +7,65 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import "./productframe.css";
 
-function ProductFrame(addToCart) {
+function ProductFrame({ addToCart }) {
+    // added curly braces to destructure addToCart from props
     const [items, setItems] = useState([]);
-
+    const [count, setCount] = useState(0);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsPerPage, setItemsPerPage] = useState(18);
+    const [selectedCategory, setSelectedCategory] = useState("");
+    const [categories, setCategories] = useState([]); // added state for categories
     useEffect(() => {
         axios
             .get("http://localhost:9000/")
             .then((res) => {
                 setItems(res.data);
+                const uniqueCategories = [
+                    ...new Set(res.data.map((item) => item.category)),
+                ]; // get unique categories from items data
+                setCategories(uniqueCategories);
             })
             .catch((err) => console.log(err));
     }, []);
-
     const increment = () => {
-        // increment code here
+        setCount(count + 1);
     };
-
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const filteredItems = selectedCategory
+        ? items.filter((item) => item.category === selectedCategory) // filter items by selected category
+        : items; // if no category is selected, show all items
+    const itemsToShow = filteredItems.slice(indexOfFirstItem, indexOfLastItem);
+    const totalPages = Math.ceil(filteredItems.length / itemsPerPage); // use filtered items for pagination
+    const pageNumbers = [];
+    for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(i);
+    }
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+    };
+    const handleCategoryChange = (event) => {
+        setSelectedCategory(event.target.value);
+        setCurrentPage(1); // reset current page when category is changed
+    };
     return (
         <>
-            {items.map((item) => (
+            <div className="categorySelect">
+                <label htmlFor="category-select">Select a category: </label>
+                <select
+                    id="category-select"
+                    value={selectedCategory}
+                    onChange={handleCategoryChange}
+                >
+                    <option value="">All categories</option>
+                    {categories.map((category, index) => (
+                        <option key={index} value={category}>
+                            {category}
+                        </option>
+                    ))}
+                </select>
+            </div>
+            {itemsToShow.map((item) => (
                 <div key={item.id} className="box">
                     <div className="product mtop">
                         <div className="img">
@@ -64,8 +104,18 @@ function ProductFrame(addToCart) {
                     </div>
                 </div>
             ))}
+            <div className="pagination">
+                {pageNumbers.map((number) => (
+                    <button
+                        key={number}
+                        onClick={() => handlePageChange(number)}
+                        className={currentPage === number ? "active" : ""}
+                    >
+                        {number}
+                    </button>
+                ))}
+            </div>
         </>
     );
 }
-
 export default ProductFrame;

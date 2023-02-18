@@ -6,11 +6,6 @@ function ProductPage() {
     return (
         <div className="processors">
             <ProductFrame />
-            <ProductFrame />
-            <ProductFrame />
-            <ProductFrame />
-            <ProductFrame />
-            <ProductFrame />
         </div>
     );
 }
