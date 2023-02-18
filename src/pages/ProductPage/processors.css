@@ -8,11 +8,14 @@
     height: 250px;
 }
 .pagination {
+    display: flex;
+    justify-content: center;
     text-align: center;
     height: 50px;
     width: 50px;
     padding: 50px;
     gap: 30px;
+    width: 100%;
 }
 .categorySelect {
     display: flexbox;

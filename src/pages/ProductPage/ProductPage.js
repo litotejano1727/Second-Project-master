@@ -4,7 +4,7 @@ import "./processors.css";
 
 function ProductPage() {
     return (
-        <div className="processors">
+        <div >
             <ProductFrame />
         </div>
     );
