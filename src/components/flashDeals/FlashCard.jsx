@@ -3,6 +3,7 @@ import axios from "axios"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { Link } from "react-router-dom"
 
 const SampleNextArrow = (props) => {
   const { className, style, onClick } = props
@@ -85,6 +86,7 @@ const FlashCard = ({ addToCart }) => {
       <Slider {...settings}>
         {productItems.map((productItems) => {
           return (
+           
             <div className='box'>
               <div className='product mtop'>
                 <div className='img'>

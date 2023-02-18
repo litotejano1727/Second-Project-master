@@ -47,18 +47,18 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 20px;
-    
 }
 
 .product img {
     width: 100%;
     height: 100%;
-    
-    
 }
 .shop .product {
     transition: 0.5s;
 }
 .shop .product:hover {
     box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
+}
+.laptop-name {
+    height: 10px;
 }
