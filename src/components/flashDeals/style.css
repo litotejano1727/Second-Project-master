@@ -1,7 +1,6 @@
 .flash {
     background: #f6f9fc;
 }
-.text {
-    overflow: hidden;
-    text-overflow: ellipsis;
+.title {
+    height: 40px;
 }

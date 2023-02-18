@@ -9,10 +9,9 @@ import Sdata from "./components/shops/Sdata";
 import axios from "axios";
 import Details from "./components/productpage/Details";
 import "./App.css";
-
+import ProductPage from "./pages/ProductPage/ProductPage";
 import SignUp from "./pages/signinandlogin/SignUp";
 import SignIn from "./pages/signinandlogin/SignIn";
-import Processors from "./pages/ProductPage/Processors";
 import Product from "./Admin/pages/product/Product";
 
 function Onlineshop() {
@@ -93,7 +92,7 @@ function Onlineshop() {
 
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/signin" element={<SignIn />} />
-                <Route path="/pages" element={<Processors />} />
+                <Route path="/categories" element={<ProductPage />} />
             </Routes>
             <Footer />
         </>

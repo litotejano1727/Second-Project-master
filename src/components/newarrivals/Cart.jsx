@@ -20,10 +20,10 @@ const Cart = () => {
         {products.map((val, index) => {
           return (
             <div className='box' key={index}>
-              <div className='img'>
+              <div className='newArrivalImg'>
                 <img src={val.image} alt='' />
               </div>
-              <h4>{val.name}</h4>
+              <h4 className='newArrivalName'>{val.name}</h4>
               <span>₱{val.price}</span>
             </div>
           )
